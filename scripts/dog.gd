@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		
 	# Get the input direction and handle the movement/deceleration.
+
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -34,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		anim.play("dog_jump")
 		if velocity.x != 0:
 			sprite.flip_h = velocity.x < 0
-	
+			
 	# Other keys animations
 	if Input.is_action_just_pressed("poop") and is_on_floor():
 		anim.play("dog_poop")
