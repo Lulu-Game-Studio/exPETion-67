@@ -4,7 +4,9 @@ extends CharacterBody2D
 const SPEED: float  = 500.0
 const JUMP_VELOCITY: float = -600.0
 
-@onready var dog_sprite: Sprite2D = $dog_sprite
+@onready var sprite: Sprite2D = %dog_sprite
+@onready var anim: AnimationPlayer = %AnimationDog
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -15,18 +17,27 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	if velocity.x < 0:
-		dog_sprite.flip_h = true
-	else:
-		dog_sprite.flip_h = false
-	
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+# Basic movement
+	if is_on_floor():
+		if velocity.x != 0:
+			anim.play("dog_run")
+			sprite.flip_h = velocity.x < 0
+		else:
+			anim.play("dog_idle")
+	else:
+		anim.play("dog_jump")
+		if velocity.x != 0:
+			sprite.flip_h = velocity.x < 0
+
+# Other keys animations
+	if Input.is_action_just_pressed("poop") and is_on_floor():
+		anim.play("dog_poop")
+
 
 	move_and_slide()
