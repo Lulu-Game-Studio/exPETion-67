@@ -173,7 +173,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_tpbal"]
-resource_name = "dog_pop"
+resource_name = "dog_poop"
 length = 0.75
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -377,31 +377,31 @@ _data = {
 &"dog_idle": SubResource("Animation_qjqk5"),
 &"dog_jump": SubResource("Animation_v3i3p"),
 &"dog_lines": SubResource("Animation_ei5el"),
-&"dog_pop": SubResource("Animation_tpbal"),
+&"dog_poop": SubResource("Animation_tpbal"),
 &"dog_run": SubResource("Animation_iaoh4"),
 &"dog_sit": SubResource("Animation_i2xh6"),
 &"dog_walk": SubResource("Animation_laypt"),
 &"dog_withotlines": SubResource("Animation_jlmqp")
 }
 
-[node name="dog" type="Node2D" unique_id=1937865052]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1787895375]
+[node name="dog" type="CharacterBody2D" unique_id=1787895375]
 script = ExtResource("1_iaoh4")
 
-[node name="dog_sprite" type="Sprite2D" parent="CharacterBody2D" unique_id=989392332]
+[node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
-texture = ExtResource("1_on80e")
-hframes = 5
+texture = ExtResource("2_vwjdu")
+hframes = 11
+frame = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=223300530]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530]
 position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_iaoh4")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=575198120]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120]
 position_smoothing_enabled = true
 
 [node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140]
 unique_name_in_owner = true
+root_node = NodePath("")
 libraries/ = SubResource("AnimationLibrary_gmowd")
