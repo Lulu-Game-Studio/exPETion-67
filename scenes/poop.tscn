@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bhmt36rx8qc5c"]
+
+[ext_resource type="Texture2D" path="res://images/Design/Sprites/ui-sprites.png" id="1_x0kvg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0kvg"]
+atlas = ExtResource("1_x0kvg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snhol"]
+size = Vector2(20, 18)
+
+[node name="poop" type="Area2D" unique_id=1234037383]
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=149570950]
+texture = SubResource("AtlasTexture_x0kvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834045002]
+shape = SubResource("RectangleShape2D_snhol")
