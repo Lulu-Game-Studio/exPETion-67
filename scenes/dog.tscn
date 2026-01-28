@@ -375,7 +375,7 @@ tracks/2/keys = {
 _data = {
 &"RESET": SubResource("Animation_vwjdu"),
 &"dog_idle": SubResource("Animation_qjqk5"),
-&"dog_jump": SubResource("Animation_gmowd"),
+&"dog_jump": SubResource("Animation_v3i3p"),
 &"dog_lines": SubResource("Animation_ei5el"),
 &"dog_poop": SubResource("Animation_tpbal"),
 &"dog_run": SubResource("Animation_iaoh4"),
