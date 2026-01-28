@@ -68,12 +68,15 @@ run={
 ]
 }
 
+<<<<<<< HEAD
 [layer_names]
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="enemies"
 2d_physics/layer_3="objects"
 
+=======
+>>>>>>> 22820c3b0799ee211cbb6e48e97687de7654ec4b
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
