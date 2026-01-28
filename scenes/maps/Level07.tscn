@@ -1,24 +1,24 @@
-[gd_scene format=4 uid="uid://d3a4eh8xu7bts"]
+[gd_scene format=4 uid="uid://c0x6gyytsjtxo"]
 
-[ext_resource type="Texture2D" uid="uid://bixueduvdnn60" path="res://images/Design/Sprites/global-sprites.png" id="1_4e331"]
+[ext_resource type="Texture2D" uid="uid://bixueduvdnn60" path="res://images/Design/Sprites/global-sprites.png" id="1_v816p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0idui"]
-texture = ExtResource("1_4e331")
+texture = ExtResource("1_v816p")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 2:1/0 = 0
 3:1/0 = 0
-4:1/0 = 0
 4:0/0 = 0
+4:1/0 = 0
 5:0/size_in_atlas = Vector2i(3, 4)
 5:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qnryt"]
 sources/0 = SubResource("TileSetAtlasSource_0idui")
 
-[node name="Level01" type="Node2D" unique_id=1334552259]
+[node name="Level07" type="Node2D" unique_id=1334552259]
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=2082765216]
 texture_filter = 1
