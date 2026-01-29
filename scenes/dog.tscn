@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d2gtyklrqqb0h" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
-size = Vector2(40, 32)
+size = Vector2(41, 32)
 
 [sub_resource type="Animation" id="Animation_qjqk5"]
 length = 0.001
@@ -476,7 +476,7 @@ texture = ExtResource("9_ei5el")
 hframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530]
-position = Vector2(-11, 6)
+position = Vector2(-1.5, 7)
 shape = SubResource("RectangleShape2D_iaoh4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=575198120]
