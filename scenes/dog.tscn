@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d2gtyklrqqb0h" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
-size = Vector2(71, 54)
+size = Vector2(40, 32)
 
 [sub_resource type="Animation" id="Animation_qjqk5"]
 length = 0.001
@@ -471,15 +471,16 @@ script = ExtResource("1_iaoh4")
 [node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_ei5el")
 hframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530]
-position = Vector2(-1, 8)
+position = Vector2(-11, 6)
 shape = SubResource("RectangleShape2D_iaoh4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=575198120]
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140]
