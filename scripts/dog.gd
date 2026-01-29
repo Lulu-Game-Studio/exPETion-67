@@ -16,8 +16,9 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	# Get the input direction and handle the movement/deceleration.
 
-# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -34,10 +35,17 @@ func _physics_process(delta: float) -> void:
 		anim.play("dog_jump")
 		if velocity.x != 0:
 			sprite.flip_h = velocity.x < 0
-
-# Other keys animations
+			
+	# Other keys animations
 	if Input.is_action_just_pressed("poop") and is_on_floor():
 		anim.play("dog_poop")
-
+	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
+		anim.play("dog_lines")
+	if Input.is_action_just_pressed("bark"): # Bark WITHOUT lines, no need to change
+		anim.play("dog_withotlines")
+	if Input.is_action_just_pressed("run"): # Need a change, quick fix but not looped while shift
+		anim.play("dog_run")
+	
+	
 
 	move_and_slide()
