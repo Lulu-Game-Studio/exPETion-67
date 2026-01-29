@@ -1,51 +1,65 @@
 extends CharacterBody2D
 
-
-const SPEED: float  = 500.0
+const SPEED: float = 500.0
 const JUMP_VELOCITY: float = -600.0
 
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
+var busy: bool = false
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor():	# Falling gravity
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		
-	# Get the input direction and handle the movement/deceleration.
+	# 1. SPECIAL ANIMATIONS CHECK (Priority #1)
+	if not busy:
+		if Input.is_action_just_pressed("poop") and is_on_floor():
+			velocity = Vector2.ZERO
+			play_special_animation("dog_poop")
+		if Input.is_action_just_pressed("run") and is_on_floor():
+			velocity = Vector2.ZERO
+			play_special_animation("dog_run")
+		if Input.is_action_just_pressed("6") and is_on_floor():
+			pass
+		if Input.is_action_just_pressed("7") and is_on_floor():
+			pass
+		if Input.is_action_just_pressed("bark") and is_on_floor():
+			velocity = Vector2.ZERO
+			play_special_animation("dog_lines")
+			return # Stop reading code here so we don't accidentally play other anims
 
-	var direction := Input.get_axis("left", "right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-# Basic movement
-	if is_on_floor():
-		if velocity.x != 0:
+	# 2. MOVEMENT LOGIC (Only runs if not busy)
+	if not busy:
+		# Jump Input
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		
+		# Left/Right Input
+		var direction := Input.get_axis("left", "right")
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+		# 3. MOVEMENT ANIMATIONS (Priority #2)
+		if not is_on_floor():
+			anim.play("dog_jump")
+			# Flip sprite in air
+			if velocity.x != 0:
+				sprite.flip_h = velocity.x < 0
+		elif velocity.x != 0:
 			anim.play("dog_run")
 			sprite.flip_h = velocity.x < 0
 		else:
+			# Only play idle if on floor AND not moving
 			anim.play("dog_idle")
-	else:
-		anim.play("dog_jump")
-		if velocity.x != 0:
-			sprite.flip_h = velocity.x < 0
-			
-	# Other keys animations
-	if Input.is_action_just_pressed("poop") and is_on_floor():
-		anim.play("dog_poop")
-	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
-		anim.play("dog_lines")
-	if Input.is_action_just_pressed("bark"): # Bark WITHOUT lines, no need to change
-		anim.play("dog_withotlines")
-	if Input.is_action_just_pressed("run"): # Need a change, quick fix but not looped while shift
-		anim.play("dog_run")
-	
-	
 
 	move_and_slide()
+
+func play_special_animation(animation_name: String) -> void:
+	busy = true
+	anim.play(animation_name)
+	# Wait until this specific animation finishes
+	await anim.animation_finished
+	busy = false
