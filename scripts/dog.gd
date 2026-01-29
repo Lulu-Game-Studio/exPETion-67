@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
 		anim.play("dog_lines")
 	if Input.is_action_just_pressed("bark"): # Bark WITHOUT lines, no need to change
-		anim.play("dog_withotlines")
+		anim.play("dog_withoutlines")
 	if Input.is_action_just_pressed("run"): # Need a change, quick fix but not looped while shift
 		anim.play("dog_run")
 	
