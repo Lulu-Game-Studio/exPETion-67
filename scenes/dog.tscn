@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://m0qa2hta3x6w" path="res://images/Design/Animation/runsprite.png" id="4_gmowd"]
 [ext_resource type="Texture2D" uid="uid://dfbxabnwdbk6p" path="res://images/Design/Animation/barksprite with lines.png" id="4_laypt"]
 [ext_resource type="Texture2D" uid="uid://t61qh7oq2px7" path="res://images/Design/Animation/sitsprite.png" id="5_tpbal"]
+[ext_resource type="Texture2D" uid="uid://b5hp0om05bm5p" path="res://images/Design/Animation/walksprite.png" id="7_i2xh6"]
 [ext_resource type="Texture2D" uid="uid://d2gtyklrqqb0h" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
@@ -289,6 +290,46 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
+[sub_resource type="Animation" id="Animation_x8of7"]
+resource_name = "dog_walk"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dog_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_i2xh6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dog_sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dog_sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="Animation" id="Animation_gmowd"]
 resource_name = "dog_withoutlines"
 length = 0.41
@@ -338,6 +379,7 @@ _data = {
 &"dog_poop": SubResource("Animation_ei5el"),
 &"dog_run": SubResource("Animation_jlmqp"),
 &"dog_sit": SubResource("Animation_v3i3p"),
+&"dog_walk": SubResource("Animation_x8of7"),
 &"dog_withoutlines": SubResource("Animation_gmowd")
 }
 
@@ -352,7 +394,7 @@ texture = ExtResource("9_ei5el")
 hframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530]
-position = Vector2(6.5, 7)
+position = Vector2(-1, 8)
 shape = SubResource("RectangleShape2D_iaoh4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=575198120]
