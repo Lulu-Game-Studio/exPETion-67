@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhmt36rx8qc5c"]
 
-[ext_resource type="Texture2D" path="res://images/Design/Sprites/ui-sprites.png" id="1_x0kvg"]
+[ext_resource type="Script" uid="uid://rl8540s7a0g0" path="res://scripts/poop.gd" id="1_pkbnx"]
+[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="1_x0kvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0kvg"]
 atlas = ExtResource("1_x0kvg")
@@ -11,9 +12,12 @@ size = Vector2(20, 18)
 
 [node name="poop" type="Area2D" unique_id=1234037383]
 collision_layer = 4
+script = ExtResource("1_pkbnx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=149570950]
 texture = SubResource("AtlasTexture_x0kvg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834045002]
 shape = SubResource("RectangleShape2D_snhol")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
