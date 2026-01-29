@@ -361,3 +361,4 @@ position_smoothing_enabled = true
 [node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gmowd")
+autoplay = &"dog_idle"
