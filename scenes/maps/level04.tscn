@@ -1,8 +1,6 @@
-[gd_scene format=4 uid="uid://cydn57plni5q1"]
+[gd_scene format=4 uid="uid://dfcb1fgxvo05p"]
 
-[ext_resource type="Texture2D" uid="uid://hps23xcqmf0p" path="res://icon.svg" id="1_6j14n"]
-[ext_resource type="Texture2D" uid="uid://bixueduvdnn60" path="res://images/Design/Sprites/global-sprites.png" id="1_6malg"]
-[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="2_6j14n"]
+[ext_resource type="Texture2D" path="res://images/Design/Sprites/global-sprites.png" id="1_v816p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbbjd"]
 texture = ExtResource("1_6malg")
@@ -20,12 +18,10 @@ texture = ExtResource("1_6malg")
 texture = ExtResource("2_6j14n")
 0:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_ycko3"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_rbbjd")
-sources/1 = SubResource("TileSetAtlasSource_wom6i")
+[sub_resource type="TileSet" id="TileSet_qnryt"]
+sources/0 = SubResource("TileSetAtlasSource_0idui")
 
-[node name="Level04" type="Node2D" unique_id=244969488]
+[node name="Level02" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1859312863]
 offset_right = 1156.0
