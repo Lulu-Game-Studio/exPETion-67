@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED: float = 50.0
-const SPEED_RUNNING: float = 150.0
-const JUMP_VELOCITY: float = -150.0
+const SPEED: float = 100.0
+const SPEED_RUNNING: float = 250.0
+const JUMP_VELOCITY: float = -300.0
 
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
