@@ -375,7 +375,7 @@ tracks/2/keys = {
 _data = {
 &"RESET": SubResource("Animation_vwjdu"),
 &"dog_idle": SubResource("Animation_qjqk5"),
-&"dog_jump": SubResource("Animation_gmowd"),
+&"dog_jump": SubResource("Animation_v3i3p"),
 &"dog_lines": SubResource("Animation_ei5el"),
 &"dog_poop": SubResource("Animation_tpbal"),
 &"dog_run": SubResource("Animation_iaoh4"),
@@ -390,8 +390,9 @@ script = ExtResource("1_iaoh4")
 [node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
-texture = ExtResource("3_qjqk5")
-hframes = 10
+texture = ExtResource("2_vwjdu")
+hframes = 11
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530]
 position = Vector2(0, 17)
@@ -402,6 +403,4 @@ position_smoothing_enabled = true
 
 [node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140]
 unique_name_in_owner = true
-root_node = NodePath("")
 libraries/ = SubResource("AnimationLibrary_gmowd")
-autoplay = &"dog_idle"
