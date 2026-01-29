@@ -6,13 +6,13 @@ const JUMP_VELOCITY: float = -600.0
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
-var busy: bool = false
+var busy: bool = false # Declared outside a function so it saves in the long run
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():	# Falling gravity
 		velocity += get_gravity() * delta
 
-	# 1. SPECIAL ANIMATIONS CHECK (Priority #1)
+	# Checks if a special animation key is pressed (not busy)
 	if not busy:
 		if Input.is_action_just_pressed("poop") and is_on_floor():
 			velocity = Vector2.ZERO
@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 			play_special_animation("dog_lines")
 			return # Stop reading code here so we don't accidentally play other anims
 
-	# 2. MOVEMENT LOGIC (Only runs if not busy)
+	# MOVEMENT LOGIC (Only runs if not busy)
 	if not busy:
 		# Jump Input
 		if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -42,24 +42,23 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
-		# 3. MOVEMENT ANIMATIONS (Priority #2)
+		# Movement animations (only play if there is no other animation
 		if not is_on_floor():
 			anim.play("dog_jump")
-			# Flip sprite in air
+			# Flip sprite, works both air and ground
 			if velocity.x != 0:
 				sprite.flip_h = velocity.x < 0
 		elif velocity.x != 0:
 			anim.play("dog_run")
 			sprite.flip_h = velocity.x < 0
 		else:
-			# Only play idle if on floor AND not moving
 			anim.play("dog_idle")
 
 	move_and_slide()
 
-func play_special_animation(animation_name: String) -> void:
+func play_special_animation(animation_name: String) -> void: # Funtion to stop other animations from stepping on special animations (idle fix)
 	busy = true
 	anim.play(animation_name)
 	# Wait until this specific animation finishes
-	await anim.animation_finished
+	await anim.animation_finished # It waits for the animation to end so you can play th game
 	busy = false
