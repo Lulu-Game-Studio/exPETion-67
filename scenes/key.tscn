@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bko7qqfqls3so"]
+
+[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="1_yk2u2"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_p0yg6"]
+frame_0/texture = ExtResource("1_yk2u2")
+
+[sub_resource type="Animation" id="Animation_d8y70"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ANIMATED_KEY:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.73333335, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 1, 3]
+}
+
+[sub_resource type="Animation" id="Animation_k4l57"]
+resource_name = "key_float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ANIMATED_KEY:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wp5jh"]
+_data = {
+&"RESET": SubResource("Animation_d8y70"),
+&"key_float": SubResource("Animation_k4l57")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krfvd"]
+size = Vector2(18, 11.5)
+
+[node name="KEY" type="Area2D" unique_id=329449611]
+
+[node name="ANIMATED_KEY" type="Sprite2D" parent="." unique_id=1039845552]
+texture = SubResource("AnimatedTexture_p0yg6")
+hframes = 16
+vframes = 16
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2030347423]
+libraries/ = SubResource("AnimationLibrary_wp5jh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=643620783]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_krfvd")

@@ -72,6 +72,24 @@ func _physics_process(delta: float) -> void:
 		else:
 			anim.play("dog_idle")
 
+	else:
+		anim.play("dog_jump")
+		if velocity.x != 0:
+			sprite.flip_h = velocity.x < 0
+			
+	# Other keys animations
+	if Input.is_action_just_pressed("poop") and is_on_floor():
+		anim.play("dog_poop")
+	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
+		anim.play("dog_lines")
+	if Input.is_action_just_pressed("bark"): # Bark WITHOUT lines, no need to change
+		anim.play("dog_withoutlines")
+	if Input.is_action_just_pressed("run"): # Need a change, quick fix but not looped while shift
+		anim.play("dog_run")
+	
+	
+
+
 	move_and_slide()
 
 ## Function to stop the character from being able to move (busy == true), then starts the next animation
