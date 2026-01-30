@@ -9,6 +9,7 @@ const JUMP_VELOCITY: float = -300.0
 
 # Boolean to check if there is another animation queuing to play besides movement ones
 var busy: bool = false 
+var HP = 3
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():	
