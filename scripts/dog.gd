@@ -72,7 +72,6 @@ func _physics_process(delta: float) -> void:
 				anim.play("dog_run")
 		else:
 			anim.play("dog_idle")
-<<<<<<< HEAD
 	else:
 		anim.play("dog_jump")
 		if velocity.x != 0:
@@ -89,8 +88,7 @@ func _physics_process(delta: float) -> void:
 		anim.play("dog_run")
 	
 	
-=======
->>>>>>> 8cd15c87a0ef147aced5fbc8c81423d8712e2779
+
 
 	move_and_slide()
 
