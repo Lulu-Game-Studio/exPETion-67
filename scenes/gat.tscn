@@ -1,10 +1,7 @@
-[gd_scene format=3 uid="uid://dl37tivjfo6ll"]
+[gd_scene format=3 uid="uid://dbjtm06g7w3tg"]
 
 [ext_resource type="Texture2D" uid="uid://colhjqgsckate" path="res://images/Design/Animation/Cat/idle_sprite.png" id="1_0oxxq"]
 [ext_resource type="Texture2D" uid="uid://ds0ml3qyokkob" path="res://images/Design/Animation/Cat/walk_sprite.png" id="2_0oxxq"]
-[ext_resource type="Texture2D" uid="uid://c8h4mr3w7e51e" path="res://images/Design/Animation/Cat/angry_sprite.png" id="2_68wdr"]
-[ext_resource type="Texture2D" uid="uid://chi4s7a7srigo" path="res://images/Design/Animation/Cat/jump_sprite.png" id="2_pq71f"]
-[ext_resource type="Texture2D" uid="uid://dq3174mfgist1" path="res://images/Design/Animation/Cat/run_sprite.png" id="2_sd1w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68wdr"]
 size = Vector2(31, 26)
@@ -48,45 +45,6 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_g0pc4"]
-resource_name = "cat_angry"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IdleSprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_68wdr")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("IdleSprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("IdleSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.13333334, 0.26666668, 0.4, 0.5333333, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 2, 3, 4, 5, 6, 7]
-}
-
 [sub_resource type="Animation" id="Animation_pq71f"]
 resource_name = "cat_idle"
 tracks/0/type = "value"
@@ -126,72 +84,32 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_b3pnn"]
-resource_name = "cat_jump"
-length = 0.76
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IdleSprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_pq71f")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("IdleSprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [7]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("IdleSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.26666668, 0.36666667, 0.56666666, 0.6333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
 [sub_resource type="Animation" id="Animation_sd1w2"]
 resource_name = "cat_run"
-length = 0.7
+length = 0.65
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("IdleSprite:texture")
-tracks/0/interp = 1
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [ExtResource("2_sd1w2")]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("IdleSprite:hframes")
-tracks/1/interp = 1
+tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [8]
+"values": []
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -249,9 +167,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v0ys3"]
 _data = {
 &"RESET": SubResource("Animation_u0cip"),
-&"cat_angry": SubResource("Animation_g0pc4"),
 &"cat_idle": SubResource("Animation_pq71f"),
-&"cat_jump": SubResource("Animation_b3pnn"),
 &"cat_run": SubResource("Animation_sd1w2"),
 &"cat_walk": SubResource("Animation_68wdr")
 }
