@@ -72,6 +72,7 @@ func _physics_process(delta: float) -> void:
 				anim.play("dog_run")
 		else:
 			anim.play("dog_idle")
+
 	else:
 		anim.play("dog_jump")
 		if velocity.x != 0:
