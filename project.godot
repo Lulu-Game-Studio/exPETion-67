@@ -19,6 +19,15 @@ run/main_scene="uid://bcmuv7kqub3xm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Fonts/": "teal",
+"res://images/": "orange",
+"res://scenes/": "green",
+"res://scripts/": "blue"
+}
+
 [input]
 
 jump={
