@@ -4,6 +4,11 @@ const SPEED: float = 100.0
 const SPEED_RUNNING: float = 250.0
 const JUMP_VELOCITY: float = -300.0
 
+var poopValue = 0
+const poopIncrease = 25
+
+
+@onready var poopBar : ProgressBar = $PoopBar/Sprite2D/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
@@ -11,6 +16,12 @@ const JUMP_VELOCITY: float = -300.0
 var busy: bool = false 
 
 func _physics_process(delta: float) -> void:
+	if poopValue < 100:
+		poopValue+= poopIncrease * delta
+		poopValue = clamp(poopValue,0,100)
+	if poopBar:
+		poopBar.value= poopValue
+
 	if not is_on_floor():	
 		velocity += get_gravity() * delta
 	# Left/Right Input
