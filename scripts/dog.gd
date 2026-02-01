@@ -5,7 +5,7 @@ const SPEED_RUNNING: float = 250.0
 const JUMP_VELOCITY: float = -300.0
 
 var poopValue = 0
-const poopIncrease = 25
+const poopIncrease = 15
 
 var haveKey = false
 
@@ -96,6 +96,7 @@ func _physics_process(delta: float) -> void:
 	# Other keys animations
 	if Input.is_action_just_pressed("poop") and is_on_floor():
 		anim.play("dog_poop")
+		poopValue=0
 	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
 		anim.play("dog_lines")
 	if Input.is_action_just_pressed("bark"): # Bark WITHOUT lines, no need to change

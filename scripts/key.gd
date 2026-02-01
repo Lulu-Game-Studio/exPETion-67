@@ -5,9 +5,7 @@ var catched: bool = false
 
 @export var head_height: float = 5
 
-func _ready():
-	#Connect the signal
-	body_entered.connect(_on_body_entered)
+
 	
 func _on_body_entered(body):
 	# Verify if the body is the player 

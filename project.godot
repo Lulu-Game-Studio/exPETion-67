@@ -19,6 +19,18 @@ run/main_scene="uid://bcmuv7kqub3xm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://images/": "pink",
+"res://images/Design/Animation/": "red",
+"res://images/Design/Sprites/": "orange",
+"res://scenes/": "blue",
+"res://scenes/UI/": "teal",
+"res://scenes/maps/": "green",
+"res://scripts/": "red"
+}
+
 [global_group]
 
 player=""

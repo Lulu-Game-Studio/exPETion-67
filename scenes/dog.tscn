@@ -254,6 +254,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ei5el"]
 resource_name = "dog_poop"
+length = 1.3666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
