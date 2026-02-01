@@ -49,6 +49,7 @@ _data = {
 size = Vector2(18, 11.5)
 
 [node name="KEY" type="Area2D" unique_id=329449611]
+collision_layer = 4
 script = ExtResource("1_fttkb")
 
 [node name="ANIMATED_KEY" type="Sprite2D" parent="." unique_id=1039845552]

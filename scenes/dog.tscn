@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dflxbp6g8sef5"]
 
 [ext_resource type="Script" uid="uid://nuncfl733a78" path="res://scripts/dog.gd" id="1_iaoh4"]
-[ext_resource type="Texture2D" uid="uid://bl0w2sa6nk1la" path="res://images/Design/Animation/idlesprite.png" id="1_on80e"]
-[ext_resource type="Texture2D" uid="uid://hih3r48rnxg" path="res://images/Design/Animation/jumpsprite.png" id="2_vwjdu"]
-[ext_resource type="Texture2D" uid="uid://cuertdqnlbyk5" path="res://images/Design/Animation/poopsprite.png" id="3_qjqk5"]
-[ext_resource type="Texture2D" uid="uid://m0qa2hta3x6w" path="res://images/Design/Animation/runsprite.png" id="4_gmowd"]
-[ext_resource type="Texture2D" uid="uid://dfbxabnwdbk6p" path="res://images/Design/Animation/barksprite with lines.png" id="4_laypt"]
-[ext_resource type="Texture2D" uid="uid://t61qh7oq2px7" path="res://images/Design/Animation/sitsprite.png" id="5_tpbal"]
-[ext_resource type="Texture2D" uid="uid://b5hp0om05bm5p" path="res://images/Design/Animation/walksprite.png" id="7_i2xh6"]
-[ext_resource type="Texture2D" uid="uid://d2gtyklrqqb0h" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
+[ext_resource type="Texture2D" uid="uid://dqh4c0a4t2h6d" path="res://images/Design/Animation/idlesprite.png" id="1_on80e"]
+[ext_resource type="Texture2D" uid="uid://c68xowcuaahey" path="res://images/Design/Animation/jumpsprite.png" id="2_vwjdu"]
+[ext_resource type="Texture2D" uid="uid://mjh0wd4p7fjf" path="res://images/Design/Animation/poopsprite.png" id="3_qjqk5"]
+[ext_resource type="Texture2D" uid="uid://bd3m11wbcs60x" path="res://images/Design/Animation/runsprite.png" id="4_gmowd"]
+[ext_resource type="Texture2D" uid="uid://cqvneta0mkjw" path="res://images/Design/Animation/barksprite with lines.png" id="4_laypt"]
+[ext_resource type="Texture2D" uid="uid://biy58iym4y112" path="res://images/Design/Animation/sitsprite.png" id="5_tpbal"]
+[ext_resource type="Texture2D" uid="uid://bw64apobj6sxe" path="res://images/Design/Animation/walksprite.png" id="7_i2xh6"]
+[ext_resource type="Texture2D" uid="uid://uk6s4lhgg5bl" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
 size = Vector2(41, 32)
@@ -465,25 +465,26 @@ _data = {
 &"dog_withoutlines": SubResource("Animation_gmowd")
 }
 
-[node name="dog" type="CharacterBody2D" unique_id=1787895375]
+[node name="dog" type="CharacterBody2D" unique_id=1787895375 groups=["player"]]
+collision_mask = 7
 script = ExtResource("1_iaoh4")
 
-[node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332]
+[node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332 groups=["player"]]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_ei5el")
 hframes = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530 groups=["player"]]
 position = Vector2(-1.5, 7)
 shape = SubResource("RectangleShape2D_iaoh4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120 groups=["player"]]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140]
+[node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140 groups=["player"]]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gmowd")
 autoplay = &"dog_idle"
