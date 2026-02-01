@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://5mnqcj4a8dom" path="res://scenes/maps/SSBU_Big_Battlefield.webp" id="1_hufrt"]
 [ext_resource type="PackedScene" uid="uid://dflxbp6g8sef5" path="res://scenes/dog.tscn" id="2_43dtx"]
 [ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="3_0c1xn"]
-[ext_resource type="PackedScene" uid="uid://c4uybjjfrmt7c" path="res://scenes/UI/poop_bar.tscn" id="3_lphnh"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="4_kn87d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43dtx"]
@@ -8430,9 +8429,6 @@ collision_visibility_mode = 1
 
 [node name="dog" parent="." unique_id=1937865052 instance=ExtResource("2_43dtx")]
 position = Vector2(440, 106.66666)
-
-[node name="PoopBar" parent="dog" unique_id=1897186035 instance=ExtResource("3_lphnh")]
-position = Vector2(-396.66666, -249.99998)
 
 [node name="poop" parent="." unique_id=1234037383 instance=ExtResource("3_0c1xn")]
 position = Vector2(763.3333, 110)

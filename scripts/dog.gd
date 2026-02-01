@@ -7,6 +7,7 @@ const JUMP_VELOCITY: float = -300.0
 var poopValue = 0
 const poopIncrease = 25
 
+var haveKey = false
 
 @onready var poopBar : ProgressBar = $PoopBar/Sprite2D/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
@@ -16,9 +17,12 @@ const poopIncrease = 25
 var busy: bool = false 
 
 func _physics_process(delta: float) -> void:
+	#checking if the poopbar is filled or not
 	if poopValue < 100:
+		#if not filled increase with the const
 		poopValue+= poopIncrease * delta
 		poopValue = clamp(poopValue,0,100)
+	#if there is a poopBar constantly upload it with news values
 	if poopBar:
 		poopBar.value= poopValue
 
