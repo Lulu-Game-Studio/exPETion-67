@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://k7ashoi3hvik"]
 
-[ext_resource type="Script" uid="uid://ckmjmx4qmpruv" path="res://scenes/doberman.gd" id="1_aiqim"]
+[ext_resource type="Script" uid="uid://ckmjmx4qmpruv" path="res://scripts/doberman.gd" id="1_aiqim"]
 [ext_resource type="Texture2D" uid="uid://dy7wm7r8je502" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Idle.png" id="1_fi34j"]
 [ext_resource type="Texture2D" uid="uid://c73qkrq1lgey" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Walk.png" id="2_f8hj4"]
 [ext_resource type="Texture2D" uid="uid://d4k3sgf00diy" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Attack.png" id="2_vpy1p"]

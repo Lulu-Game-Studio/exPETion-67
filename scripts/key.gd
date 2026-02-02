@@ -3,9 +3,7 @@ extends Area2D
 var velocidad: float = 90
 var objetivo: Node2D= null
 
-func _ready():
-	body_entered.connect(_on_body_entered)
-	
+
 func _on_body_entered(body):
 	objetivo=body
 
