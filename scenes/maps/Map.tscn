@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ce1avx78pvo8d"]
+
+[ext_resource type="Texture2D" uid="uid://dcpbyk28gf87v" path="res://images/Design/Sprites/Map.png" id="1_8anwm"]
+[ext_resource type="Script" uid="uid://2x4kiuljfk36" path="res://scripts/map.gd" id="2_w7c4r"]
+[ext_resource type="PackedScene" uid="uid://1ykex3osus64" path="res://scenes/UI/LevelButton.tscn" id="3_exqhh"]
+
+[node name="Map" type="Node2D" unique_id=1935168421]
+position = Vector2(553, 247)
+script = ExtResource("2_w7c4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=483284191]
+light_mask = 0
+position = Vector2(135, 11)
+texture = ExtResource("1_8anwm")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1555445085]
+zoom = Vector2(5, 5)
+
+[node name="Level 1" parent="." unique_id=1802586514 instance=ExtResource("3_exqhh")]
+offset_left = 87.0
+offset_top = 30.0
+offset_right = 103.0
+offset_bottom = 46.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Level 6" parent="." unique_id=835835619 instance=ExtResource("3_exqhh")]
+offset_left = 124.0
+offset_top = -19.0
+offset_right = 140.0
+offset_bottom = -3.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Level 5" parent="." unique_id=333564955 instance=ExtResource("3_exqhh")]
+offset_left = 99.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 20.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Level 4" parent="." unique_id=1068465152 instance=ExtResource("3_exqhh")]
+offset_left = 136.0
+offset_top = 7.0
+offset_right = 152.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Level 3" parent="." unique_id=305763589 instance=ExtResource("3_exqhh")]
+offset_left = 158.0
+offset_top = 33.0
+offset_right = 174.0
+offset_bottom = 49.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Level 2" parent="." unique_id=1498987606 instance=ExtResource("3_exqhh")]
+offset_left = 124.0
+offset_top = 27.0
+offset_right = 140.0
+offset_bottom = 43.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=131348636]
+z_index = -1
+offset_left = 19.0
+offset_top = -65.0
+offset_right = 263.0
+offset_bottom = 94.0
+mouse_filter = 2
+color = Color(0.21960784, 0.73333335, 0.3137255, 1)
+
+[connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level 6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Level 5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Level 4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Level 3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]

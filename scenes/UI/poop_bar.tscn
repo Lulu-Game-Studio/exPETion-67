@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c4uybjjfrmt7c"]
 
-[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="1_brnhp"]
+[ext_resource type="Texture2D" uid="uid://x22w1w6lrnaj" path="res://images/Design/Sprites/ui-sprites.png" id="1_brnhp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vcavf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkulg"]
 atlas = ExtResource("1_brnhp")
 region = Rect2(0, 16, 80, 32)
 
@@ -20,12 +20,10 @@ corner_radius_top_right = 999
 corner_radius_bottom_right = 999
 corner_radius_bottom_left = 999
 
-[node name="Area2D" type="Area2D" unique_id=1897186035]
+[node name="Area2D" type="Sprite2D" unique_id=198395183]
+texture = SubResource("AtlasTexture_bkulg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=920100332]
-texture = SubResource("AtlasTexture_vcavf")
-
-[node name="poopBar" type="ProgressBar" parent="Sprite2D" unique_id=932819428]
+[node name="poopBar" type="ProgressBar" parent="." unique_id=932819428]
 offset_left = -20.662876
 offset_top = 4.1080627
 offset_right = -12.55571
