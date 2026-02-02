@@ -4,6 +4,12 @@ const SPEED: float = 100.0
 const SPEED_RUNNING: float = 250.0
 const JUMP_VELOCITY: float = -300.0
 
+var poopValue = 0
+const poopIncrease = 15
+
+var haveKey = false
+
+@onready var poopBar : ProgressBar = $PoopBar/Sprite2D/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
@@ -12,6 +18,15 @@ var busy: bool = false
 var HP = 3
 
 func _physics_process(delta: float) -> void:
+	#checking if the poopbar is filled or not
+	if poopValue < 100:
+		#if not filled increase with the const
+		poopValue+= poopIncrease * delta
+		poopValue = clamp(poopValue,0,100)
+	#if there is a poopBar constantly upload it with news values
+	if poopBar:
+		poopBar.value= poopValue
+
 	if not is_on_floor():	
 		velocity += get_gravity() * delta
 	# Left/Right Input
@@ -19,7 +34,8 @@ func _physics_process(delta: float) -> void:
 
 	# Checks if a special animation key is pressed (not busy)
 	if not busy:
-		if Input.is_action_just_pressed("poop") and is_on_floor():
+		if Input.is_action_just_pressed("poop") and is_on_floor() and poopBar.value == 100:
+			poopBar.value = 0
 			velocity = Vector2.ZERO
 			play_special_animation("dog_poop")
 		# Next two if's passes because there isn't neither the sprite nor the animation to do that
@@ -78,6 +94,7 @@ func _physics_process(delta: float) -> void:
 	# Other keys animations
 	if Input.is_action_just_pressed("poop") and is_on_floor():
 		anim.play("dog_poop")
+		poopValue=0
 	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
 		anim.play("dog_lines")
 	if Input.is_action_just_pressed("run"): # Need a change, quick fix but not looped while shift
@@ -97,6 +114,5 @@ func play_special_animation(animation_name: String) -> void:
 	busy = true
 	anim.play(animation_name)
 	# It waits for the animation to end so you can play the game
-
 	await anim.animation_finished 
 	busy = false

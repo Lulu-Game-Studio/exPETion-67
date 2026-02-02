@@ -254,6 +254,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ei5el"]
 resource_name = "dog_poop"
+length = 1.3666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -465,25 +466,26 @@ _data = {
 &"dog_withoutlines": SubResource("Animation_gmowd")
 }
 
-[node name="dog" type="CharacterBody2D" unique_id=1787895375]
+[node name="dog" type="CharacterBody2D" unique_id=1787895375 groups=["player"]]
+collision_mask = 7
 script = ExtResource("1_iaoh4")
 
-[node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332]
+[node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332 groups=["player"]]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_ei5el")
 hframes = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530 groups=["player"]]
 position = Vector2(-1.5, 7)
 shape = SubResource("RectangleShape2D_iaoh4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120 groups=["player"]]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140]
+[node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140 groups=["player"]]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gmowd")
 autoplay = &"dog_idle"

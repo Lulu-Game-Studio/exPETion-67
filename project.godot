@@ -22,11 +22,18 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
-"res://Fonts/": "teal",
-"res://images/": "orange",
-"res://scenes/": "green",
-"res://scripts/": "blue"
+"res://images/": "pink",
+"res://images/Design/Animation/": "red",
+"res://images/Design/Sprites/": "orange",
+"res://scenes/": "blue",
+"res://scenes/UI/": "teal",
+"res://scenes/maps/": "green",
+"res://scripts/": "red"
 }
+
+[global_group]
+
+player=""
 
 [input]
 

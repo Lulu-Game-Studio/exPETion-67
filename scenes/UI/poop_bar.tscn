@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c4uybjjfrmt7c"]
+
+[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="1_brnhp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcavf"]
+atlas = ExtResource("1_brnhp")
+region = Rect2(0, 16, 80, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa2f8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrpue"]
+bg_color = Color(0.56325716, 0.1686883, 0.04237055, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[node name="Area2D" type="Area2D" unique_id=1897186035]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=920100332]
+texture = SubResource("AtlasTexture_vcavf")
+
+[node name="poopBar" type="ProgressBar" parent="Sprite2D" unique_id=932819428]
+offset_left = -20.662876
+offset_top = 4.1080627
+offset_right = -12.55571
+offset_bottom = 61.548344
+rotation = -1.5713352
+theme_override_styles/background = SubResource("StyleBoxFlat_oa2f8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jrpue")
+fill_mode = 2
+show_percentage = false

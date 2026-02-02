@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dbjtm06g7w3tg"]
 
-[ext_resource type="Texture2D" uid="uid://colhjqgsckate" path="res://images/Design/Animation/Cat/idle_sprite.png" id="1_0oxxq"]
-[ext_resource type="Texture2D" uid="uid://ds0ml3qyokkob" path="res://images/Design/Animation/Cat/walk_sprite.png" id="2_0oxxq"]
+[ext_resource type="Texture2D" uid="uid://cv3herxgtsk8q" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/4 Cat 2/Idle.png" id="1_u0cip"]
+[ext_resource type="Texture2D" uid="uid://blo5i4q00b3c3" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/4 Cat 2/Walk.png" id="2_0oxxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68wdr"]
-size = Vector2(31, 26)
+size = Vector2(47, 34)
 
-[sub_resource type="Animation" id="Animation_u0cip"]
+[sub_resource type="Animation" id="Animation_0oxxq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_0oxxq")]
+"values": [ExtResource("1_u0cip")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -30,7 +30,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [6]
+"values": [4]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -45,8 +45,9 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_pq71f"]
+[sub_resource type="Animation" id="Animation_sd1w2"]
 resource_name = "cat_idle"
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,10 +55,10 @@ tracks/0/path = NodePath("IdleSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.06666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_0oxxq")]
+"values": [ExtResource("1_u0cip")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,10 +67,10 @@ tracks/1/path = NodePath("IdleSprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.06666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [6]
+"values": [4]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -78,55 +79,15 @@ tracks/2/path = NodePath("IdleSprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.06666667, 0.33333334, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4]
+"values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_sd1w2"]
-resource_name = "cat_run"
-length = 0.65
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IdleSprite:texture")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("IdleSprite:hframes")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("IdleSprite:frame")
-tracks/2/interp = 0
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.13333333, 0.2, 0.26666665, 0.4, 0.5, 0.56666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
-}
-
-[sub_resource type="Animation" id="Animation_68wdr"]
+[sub_resource type="Animation" id="Animation_pq71f"]
 resource_name = "cat_walk"
-length = 0.75
+length = 0.51
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -149,7 +110,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [8]
+"values": [6]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -158,18 +119,17 @@ tracks/2/path = NodePath("IdleSprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 3, 2, 4, 5, 6]
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v0ys3"]
 _data = {
-&"RESET": SubResource("Animation_u0cip"),
-&"cat_idle": SubResource("Animation_pq71f"),
-&"cat_run": SubResource("Animation_sd1w2"),
-&"cat_walk": SubResource("Animation_68wdr")
+&"RESET": SubResource("Animation_0oxxq"),
+&"cat_idle": SubResource("Animation_sd1w2"),
+&"cat_walk": SubResource("Animation_pq71f")
 }
 
 [node name="cat" type="CharacterBody2D" unique_id=339755034]
@@ -177,11 +137,11 @@ _data = {
 [node name="IdleSprite" type="Sprite2D" parent="." unique_id=1513735156]
 position = Vector2(-6, -1)
 scale = Vector2(1.8, 1.8)
-texture = ExtResource("1_0oxxq")
-hframes = 6
+texture = ExtResource("1_u0cip")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=498046473]
-position = Vector2(-9, -1)
+position = Vector2(-18.5, 25)
 shape = SubResource("RectangleShape2D_68wdr")
 
 [node name="AnimationCat" type="AnimationPlayer" parent="." unique_id=879530379]
