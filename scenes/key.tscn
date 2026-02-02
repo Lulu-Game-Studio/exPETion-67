@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bko7qqfqls3so"]
 
+[ext_resource type="Script" uid="uid://0xoh2cq818eo" path="res://scripts/key.gd" id="1_fttkb"]
 [ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="1_yk2u2"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_p0yg6"]
@@ -48,6 +49,8 @@ _data = {
 size = Vector2(18, 11.5)
 
 [node name="KEY" type="Area2D" unique_id=329449611]
+collision_layer = 4
+script = ExtResource("1_fttkb")
 
 [node name="ANIMATED_KEY" type="Sprite2D" parent="." unique_id=1039845552]
 texture = SubResource("AnimatedTexture_p0yg6")
@@ -61,3 +64,5 @@ libraries/ = SubResource("AnimationLibrary_wp5jh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=643620783]
 position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_krfvd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,13 +4,29 @@ const SPEED: float = 100.0
 const SPEED_RUNNING: float = 250.0
 const JUMP_VELOCITY: float = -300.0
 
+var poopValue = 0
+const poopIncrease = 15
+
+var haveKey = false
+
+@onready var poopBar : ProgressBar = $PoopBar/Sprite2D/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
 # Boolean to check if there is another animation queuing to play besides movement ones
 var busy: bool = false 
+var HP = 3
 
 func _physics_process(delta: float) -> void:
+	#checking if the poopbar is filled or not
+	if poopValue < 100:
+		#if not filled increase with the const
+		poopValue+= poopIncrease * delta
+		poopValue = clamp(poopValue,0,100)
+	#if there is a poopBar constantly upload it with news values
+	if poopBar:
+		poopBar.value= poopValue
+
 	if not is_on_floor():	
 		velocity += get_gravity() * delta
 	# Left/Right Input
@@ -23,14 +39,13 @@ func _physics_process(delta: float) -> void:
 			play_special_animation("dog_poop")
 		# Next two if's passes because there isn't neither the sprite nor the animation to do that
 		if Input.is_action_just_pressed("6") and is_on_floor():
-			pass
-		if Input.is_action_just_pressed("7") and is_on_floor():
-			pass
+			play_special_animation("dog_poop")
+		
 			
 		if Input.is_action_just_pressed("bark") and is_on_floor():
 			velocity = Vector2.ZERO
 			play_special_animation("dog_lines")
-
+	
 	# Movement Logic (Only runs if not busy, separed from the upper if for more organization)
 	if not busy:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -81,6 +96,7 @@ func _physics_process(delta: float) -> void:
 	# Other keys animations
 	if Input.is_action_just_pressed("poop") and is_on_floor():
 		anim.play("dog_poop")
+		poopValue=0
 	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
 		anim.play("dog_lines")
 	if Input.is_action_just_pressed("bark"): # Bark WITHOUT lines, no need to change
@@ -97,8 +113,13 @@ func _physics_process(delta: float) -> void:
 ## (the one pressed), which changes its direction to ZERO (0, 0) so it doesn't move itself while animating,
 ## ends the animation with the 'await' command and turns busy false so you can play the game again.
 func play_special_animation(animation_name: String) -> void: 
+	if Input.is_action_just_pressed("7"):
+			if anim.current_animation == "dog_poop":
+				anim.stop()
+				play_special_animation("dog_lines")
 	busy = true
 	anim.play(animation_name)
 	# It waits for the animation to end so you can play the game
+	
 	await anim.animation_finished 
 	busy = false
