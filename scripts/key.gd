@@ -6,7 +6,6 @@ var catched: bool = false
 @export var head_height: float = 5
 
 
-	
 func _on_body_entered(body):
 	# Verify if the body is the player 
 	if body.is_in_group("player"):
