@@ -15,6 +15,7 @@ var haveKey = false
 
 # Boolean to check if there is another animation queuing to play besides movement ones
 var busy: bool = false 
+var HP = 3
 
 func _physics_process(delta: float) -> void:
 	#checking if the poopbar is filled or not
@@ -38,14 +39,13 @@ func _physics_process(delta: float) -> void:
 			play_special_animation("dog_poop")
 		# Next two if's passes because there isn't neither the sprite nor the animation to do that
 		if Input.is_action_just_pressed("6") and is_on_floor():
-			pass
-		if Input.is_action_just_pressed("7") and is_on_floor():
-			pass
+			play_special_animation("dog_poop")
+		
 			
 		if Input.is_action_just_pressed("bark") and is_on_floor():
 			velocity = Vector2.ZERO
 			play_special_animation("dog_lines")
-
+	
 	# Movement Logic (Only runs if not busy, separed from the upper if for more organization)
 	if not busy:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -113,8 +113,13 @@ func _physics_process(delta: float) -> void:
 ## (the one pressed), which changes its direction to ZERO (0, 0) so it doesn't move itself while animating,
 ## ends the animation with the 'await' command and turns busy false so you can play the game again.
 func play_special_animation(animation_name: String) -> void: 
+	if Input.is_action_just_pressed("7"):
+			if anim.current_animation == "dog_poop":
+				anim.stop()
+				play_special_animation("dog_lines")
 	busy = true
 	anim.play(animation_name)
 	# It waits for the animation to end so you can play the game
+	
 	await anim.animation_finished 
 	busy = false

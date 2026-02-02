@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://k7ashoi3hvik"]
 
+[ext_resource type="Script" uid="uid://ckmjmx4qmpruv" path="res://scenes/doberman.gd" id="1_aiqim"]
 [ext_resource type="Texture2D" uid="uid://dy7wm7r8je502" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Idle.png" id="1_fi34j"]
 [ext_resource type="Texture2D" uid="uid://c73qkrq1lgey" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Walk.png" id="2_f8hj4"]
 [ext_resource type="Texture2D" uid="uid://d4k3sgf00diy" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Attack.png" id="2_vpy1p"]
 [ext_resource type="Texture2D" uid="uid://c48ntc4cpb6l1" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Death.png" id="3_v21xd"]
 [ext_resource type="Texture2D" uid="uid://c8my48v01xt0r" path="res://images/Design/Animation/enemy_dog/Free Street Animal Pixel Art/1 Dog/Hurt.png" id="4_rqym5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqym5"]
+size = Vector2(30, 31)
+
 [sub_resource type="Animation" id="Animation_f8hj4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Idle:texture")
+tracks/0/path = NodePath("../Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,7 +27,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Idle:hframes")
+tracks/1/path = NodePath("../Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,7 +39,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Idle:frame")
+tracks/2/path = NodePath("../Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -51,7 +55,7 @@ length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Idle:texture")
+tracks/0/path = NodePath("../Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -63,7 +67,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Idle:hframes")
+tracks/1/path = NodePath("../Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -75,7 +79,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Idle:frame")
+tracks/2/path = NodePath("../Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -91,7 +95,7 @@ length = 0.75
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Idle:texture")
+tracks/0/path = NodePath("../Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -103,7 +107,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Idle:hframes")
+tracks/1/path = NodePath("../Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -115,7 +119,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Idle:frame")
+tracks/2/path = NodePath("../Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -131,7 +135,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Idle:texture")
+tracks/0/path = NodePath("../Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -143,7 +147,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Idle:hframes")
+tracks/1/path = NodePath("../Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -155,7 +159,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Idle:frame")
+tracks/2/path = NodePath("../Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -171,7 +175,7 @@ length = 0.55
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Idle:texture")
+tracks/0/path = NodePath("../Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -183,7 +187,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Idle:hframes")
+tracks/1/path = NodePath("../Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -195,7 +199,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Idle:frame")
+tracks/2/path = NodePath("../Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -211,7 +215,7 @@ length = 0.4685
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Idle:texture")
+tracks/0/path = NodePath("../Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -223,7 +227,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Idle:hframes")
+tracks/1/path = NodePath("../Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -235,7 +239,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Idle:frame")
+tracks/2/path = NodePath("../Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -255,21 +259,47 @@ _data = {
 &"doberman_walk": SubResource("Animation_v21xd")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqym5"]
-size = Vector2(30, 31)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiqim"]
+size = Vector2(568, 304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb1cg"]
+size = Vector2(192, 108)
 
 [node name="doberman" type="CharacterBody2D" unique_id=1155563102]
-position = Vector2(0, 1)
+script = ExtResource("1_aiqim")
 
-[node name="Idle" type="Sprite2D" parent="." unique_id=2124026314]
-position = Vector2(193, 25)
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2124026314]
+unique_name_in_owner = true
+position = Vector2(5, -9)
 texture = ExtResource("1_fi34j")
 hframes = 4
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1610585120]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_rqym5")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=879262793]
+unique_name_in_owner = true
 root_node = NodePath("../CollisionShape2D")
 libraries/ = SubResource("AnimationLibrary_v21xd")
+autoplay = &"doberman_idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1610585120]
-position = Vector2(188, 33.5)
-shape = SubResource("RectangleShape2D_rqym5")
+[node name="Dog_detection_area" type="Area2D" parent="." unique_id=1866968784]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dog_detection_area" unique_id=577273674]
+shape = SubResource("RectangleShape2D_aiqim")
+debug_color = Color(0.32156864, 0.8039216, 0, 0.2901961)
+
+[node name="Attack_area" type="Area2D" parent="." unique_id=503183787]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_area" unique_id=1545023173]
+shape = SubResource("RectangleShape2D_tb1cg")
+debug_color = Color(0.9831055, 0, 0.36039197, 0.41960785)
+
+[node name="Attack_timer" type="Timer" parent="." unique_id=926676621]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Dog_detection_area" to="." method="_on_dog_detection_area_body_entered"]
+[connection signal="body_entered" from="Attack_area" to="." method="_on_attack_area_body_entered"]
+[connection signal="timeout" from="Attack_timer" to="." method="_on_attack_timer_timeout"]
