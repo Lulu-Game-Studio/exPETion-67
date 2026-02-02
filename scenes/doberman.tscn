@@ -280,6 +280,7 @@ size = Vector2(568, 304)
 size = Vector2(192, 108)
 
 [node name="doberman" type="CharacterBody2D" unique_id=1155563102]
+collision_layer = 2
 script = ExtResource("1_aiqim")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2124026314]
@@ -315,5 +316,6 @@ debug_color = Color(0.9831055, 0, 0.36039197, 0.41960785)
 wait_time = 2.0
 
 [connection signal="body_entered" from="Dog_detection_area" to="." method="_on_dog_detection_area_body_entered"]
+[connection signal="body_exited" from="Dog_detection_area" to="." method="_on_dog_detection_area_body_exited"]
 [connection signal="body_entered" from="Attack_area" to="." method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="Attack_timer" to="." method="_on_attack_timer_timeout"]
