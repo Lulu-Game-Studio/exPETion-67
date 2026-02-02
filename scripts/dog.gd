@@ -4,6 +4,12 @@ const SPEED: float = 100.0
 const SPEED_RUNNING: float = 250.0
 const JUMP_VELOCITY: float = -300.0
 
+var poopValue = 0
+const poopIncrease = 15
+
+var haveKey = false
+
+@onready var poopBar : ProgressBar = $PoopBar/Sprite2D/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
@@ -12,6 +18,15 @@ var busy: bool = false
 var HP = 3
 
 func _physics_process(delta: float) -> void:
+	#checking if the poopbar is filled or not
+	if poopValue < 100:
+		#if not filled increase with the const
+		poopValue+= poopIncrease * delta
+		poopValue = clamp(poopValue,0,100)
+	#if there is a poopBar constantly upload it with news values
+	if poopBar:
+		poopBar.value= poopValue
+
 	if not is_on_floor():	
 		velocity += get_gravity() * delta
 	# Left/Right Input
@@ -81,6 +96,7 @@ func _physics_process(delta: float) -> void:
 	# Other keys animations
 	if Input.is_action_just_pressed("poop") and is_on_floor():
 		anim.play("dog_poop")
+		poopValue=0
 	if Input.is_action_just_pressed("bark"): # Bark with lines, change when enemies exist
 		anim.play("dog_lines")
 	if Input.is_action_just_pressed("bark"): # Bark WITHOUT lines, no need to change
