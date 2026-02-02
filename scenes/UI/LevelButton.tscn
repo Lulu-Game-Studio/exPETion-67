@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://1ykex3osus64"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eycx"]
+atlas = null
+region = Rect2(0, 48, 16, 16)
+
+[node name="TextureButton" type="TextureButton" unique_id=835835619]
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = SubResource("AtlasTexture_4eycx")
