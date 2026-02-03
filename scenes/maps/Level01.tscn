@@ -2,15 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://bixueduvdnn60" path="res://images/Design/Sprites/global-sprites.png" id="1_4e331"]
 [ext_resource type="PackedScene" uid="uid://dflxbp6g8sef5" path="res://scenes/dog.tscn" id="2_56a0v"]
-[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="2_x2cu2"]
+[ext_resource type="Texture2D" uid="uid://x22w1w6lrnaj" path="res://images/Design/Sprites/ui-sprites.png" id="2_x2cu2"]
 [ext_resource type="Texture2D" uid="uid://osm67i6vvkle" path="res://images/Design/Sprites/Dog_Poster.png" id="6_bwke4"]
 [ext_resource type="Texture2D" uid="uid://c6fu4bx8nf84a" path="res://images/Design/Sprites/SW_Poster.png" id="6_lyq12"]
 [ext_resource type="FontFile" uid="uid://cgcwtiboburhh" path="res://Fonts/lower-pixel/LowresPixel-Regular.otf" id="8_s82h7"]
 [ext_resource type="Texture2D" uid="uid://c2x2onnbg7sqi" path="res://images/Design/Sprites/Dog_Jail.png" id="9_n6wwg"]
 [ext_resource type="Texture2D" uid="uid://bk6lpwvt1dbnm" path="res://images/Design/Sprites/SCRATCH.png" id="10_p8fvj"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="11_3rbd3"]
-[ext_resource type="PackedScene" path="res://scenes/poop.tscn" id="11_fvnar"]
+[ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="11_fvnar"]
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="11_iutqx"]
+[ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="12_iutqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0idui"]
 texture = ExtResource("1_4e331")
@@ -182,3 +183,6 @@ position = Vector2(1148, -5)
 
 [node name="poop3" parent="." unique_id=780085369 instance=ExtResource("11_fvnar")]
 position = Vector2(2713, 150)
+
+[node name="DogHouse" parent="." unique_id=540180918 instance=ExtResource("12_iutqx")]
+position = Vector2(4041, 434)

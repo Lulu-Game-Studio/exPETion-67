@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c56o6yh6jwphl"]
 
 [ext_resource type="Texture2D" uid="uid://bixueduvdnn60" path="res://images/Design/Sprites/global-sprites.png" id="1_kb35u"]
+[ext_resource type="Script" uid="uid://cdcmnbyudhpms" path="res://scripts/saw.gd" id="1_u8doi"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_al2jn"]
 frame_0/texture = ExtResource("1_kb35u")
@@ -46,7 +47,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_21sap"]
 radius = 17.0
 
-[node name="Area2D" type="Area2D" unique_id=1058612879]
+[node name="Saw" type="Area2D" unique_id=1058612879]
+script = ExtResource("1_u8doi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=530074828]
 texture = SubResource("AnimatedTexture_al2jn")
@@ -59,3 +61,5 @@ libraries/ = SubResource("AnimationLibrary_txfdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1427971879]
 shape = SubResource("CircleShape2D_21sap")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

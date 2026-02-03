@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dflxbp6g8sef5" path="res://scenes/dog.tscn" id="2_43dtx"]
 [ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="3_0c1xn"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="4_kn87d"]
+[ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="6_6txmc"]
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="6_kily2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43dtx"]
@@ -8442,3 +8443,6 @@ position = Vector2(0, 70)
 
 [node name="doberman2" parent="." unique_id=1818536608 instance=ExtResource("6_kily2")]
 position = Vector2(853.3333, 73.333336)
+
+[node name="DogHouse" parent="." unique_id=540180918 instance=ExtResource("6_6txmc")]
+position = Vector2(423.33334, -180)
