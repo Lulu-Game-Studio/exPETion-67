@@ -13,9 +13,12 @@ var haveKey = false
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
+# It needs to be preloaded so when the dog poops it can be created and saved as a checkpoint
+const POOP_SCENE = preload("res://scenes/checkpoint_poop.tscn")
 # Boolean to check if there is another animation queuing to play besides movement ones
 var busy: bool = false 
-var HP = 3
+# Augmented HP due to attack issues
+var HP = 6
 
 func _physics_process(delta: float) -> void:
 	#checking if the poopbar is filled or not
@@ -38,10 +41,10 @@ func _physics_process(delta: float) -> void:
 			poopBar.value = 0
 			velocity = Vector2.ZERO
 			play_special_animation("dog_poop")
+			spawn_poop()
 		# Next two if's passes because there isn't neither the sprite nor the animation to do that
 		if Input.is_action_just_pressed("6") and is_on_floor():
-			play_special_animation("dog_poop")
-
+			play_special_animation("dog_six")
 
 		if Input.is_action_just_pressed("bark") and is_on_floor():
 			velocity = Vector2.ZERO
@@ -116,3 +119,24 @@ func play_special_animation(animation_name: String) -> void:
 	# It waits for the animation to end so you can play the game
 	await anim.animation_finished 
 	busy = false
+
+# Called from Doberman's script
+func take_dmg(dmg: int) -> void:
+	HP -= dmg
+	if HP <= 0:
+	# 	die()  <--- Not implemented yet
+		print(str(HP))
+	
+func spawn_poop() -> void:
+	# Instantiate the checkpoint poop to create it inside the game's memory, preloading is not enough
+	var new_poop = POOP_SCENE.instantiate()
+	
+	# could be owner instead of get_parent() too, this creates the previously instantiated poop
+	get_parent().add_child(new_poop)
+	# Gives the dog's position, depending if it's flipped or not, the X axis is slightly tweaked
+	# so it looks like the poop isn't spawning from him belly or smth, can be tweaked easily
+	if sprite.flip_h:
+		new_poop.global_position = global_position + Vector2(20, 0)
+	else:
+		new_poop.global_position = global_position - Vector2(20, 0)
+	

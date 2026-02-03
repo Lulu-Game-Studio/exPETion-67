@@ -136,7 +136,8 @@ scale = Vector2(0.12999995, 0.11522732)
 texture = ExtResource("10_p8fvj")
 
 [node name="dog" parent="." unique_id=1787895375 instance=ExtResource("2_56a0v")]
-position = Vector2(2203, 389)
+position = Vector2(64, 417)
+collision_mask = 1
 
 [node name="Kennel_Name" type="Label" parent="." unique_id=1099946041]
 offset_left = 3946.0
