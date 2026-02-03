@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://biy58iym4y112" path="res://images/Design/Animation/sitsprite.png" id="5_tpbal"]
 [ext_resource type="Texture2D" uid="uid://bw64apobj6sxe" path="res://images/Design/Animation/walksprite.png" id="7_i2xh6"]
 [ext_resource type="Texture2D" uid="uid://uk6s4lhgg5bl" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
+[ext_resource type="Texture2D" uid="uid://o0qggqeceuh4" path="res://images/Design/Animation/sixsprite.png" id="9_jlmqp"]
 [ext_resource type="PackedScene" uid="uid://c4uybjjfrmt7c" path="res://scenes/UI/poop_bar.tscn" id="10_jlmqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
@@ -55,7 +56,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_4ke0b"]
 resource_name = "dog_fall"
-length = 0.2
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -87,10 +88,10 @@ tracks/2/path = NodePath("dog_sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": []
+"values": [4, 5, 6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_btgii"]
@@ -372,6 +373,46 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
+[sub_resource type="Animation" id="Animation_ydcs6"]
+resource_name = "dog_six"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dog_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_jlmqp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dog_sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dog_sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6666667, 0.76666665, 0.8666667, 1.2333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
 [sub_resource type="Animation" id="Animation_x8of7"]
 resource_name = "dog_walk"
 length = 0.25
@@ -463,6 +504,7 @@ _data = {
 &"dog_poop": SubResource("Animation_ei5el"),
 &"dog_run": SubResource("Animation_jlmqp"),
 &"dog_sit": SubResource("Animation_v3i3p"),
+&"dog_six": SubResource("Animation_ydcs6"),
 &"dog_walk": SubResource("Animation_x8of7"),
 &"dog_withoutlines": SubResource("Animation_gmowd")
 }
