@@ -1,4 +1,7 @@
 extends Node2D
+var maxLevelReached = 1
+var generalPoops = 0
+
 
 
 func _on_level_1_pressed():
