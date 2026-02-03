@@ -7,7 +7,6 @@
 frame_0/texture = ExtResource("1_yk2u2")
 
 [sub_resource type="Animation" id="Animation_d8y70"]
-length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -16,7 +15,7 @@ tracks/0/path = NodePath("ANIMATED_KEY:frame")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.73333335, 0.96666664),
+"times": PackedFloat32Array(0, 0.16666667, 0.43333334, 0.73333335),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [1, 2, 1, 3]

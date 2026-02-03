@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dflxbp6g8sef5"]
 
-[ext_resource type="Script" uid="uid://nuncfl733a78" path="res://scripts/dog.gd" id="1_iaoh4"]
+[ext_resource type="Script" uid="uid://c41gft6vmaunr" path="res://scripts/dog.gd" id="1_iaoh4"]
 [ext_resource type="Texture2D" uid="uid://dqh4c0a4t2h6d" path="res://images/Design/Animation/idlesprite.png" id="1_on80e"]
 [ext_resource type="Texture2D" uid="uid://c68xowcuaahey" path="res://images/Design/Animation/jumpsprite.png" id="2_vwjdu"]
 [ext_resource type="Texture2D" uid="uid://mjh0wd4p7fjf" path="res://images/Design/Animation/poopsprite.png" id="3_qjqk5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bw64apobj6sxe" path="res://images/Design/Animation/walksprite.png" id="7_i2xh6"]
 [ext_resource type="Texture2D" uid="uid://uk6s4lhgg5bl" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
 [ext_resource type="Texture2D" uid="uid://o0qggqeceuh4" path="res://images/Design/Animation/sixsprite.png" id="9_jlmqp"]
+[ext_resource type="PackedScene" uid="uid://c4uybjjfrmt7c" path="res://scenes/UI/poop_bar.tscn" id="10_jlmqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
 size = Vector2(41, 32)
@@ -255,7 +256,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ei5el"]
 resource_name = "dog_poop"
-length = 1.3666667
+length = 1.1333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -531,3 +532,7 @@ position_smoothing_enabled = true
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gmowd")
 autoplay = &"dog_idle"
+
+[node name="PoopBar" parent="." unique_id=1897186035 instance=ExtResource("10_jlmqp")]
+z_index = 1
+position = Vector2(-6.0000005, -37)
