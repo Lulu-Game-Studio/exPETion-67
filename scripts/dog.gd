@@ -4,10 +4,20 @@ const SPEED: float = 100.0
 const SPEED_RUNNING: float = 250.0
 const JUMP_VELOCITY: float = -300.0
 
-var poopValue = 0
-const poopIncrease = 15
+## Variables are separated to organize their use
 
-var haveKey = false
+# Poopbar increasing and starting values
+var poopValue: float = 0.0
+const poopIncrease: int = 15
+
+# Boolean to work with the key
+var haveKey: bool = false
+
+# Create a null poop checkpoint so it doesn't create an unlimited amount of poops
+var poopPoint: RigidBody2D = null
+
+# Collects secret poops throughout the game
+var poopCoins: int = 0
 
 @onready var poopBar : ProgressBar = $PoopBar/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
@@ -18,7 +28,7 @@ const POOP_SCENE = preload("res://scenes/checkpoint_poop.tscn")
 # Boolean to check if there is another animation queuing to play besides movement ones
 var busy: bool = false 
 # Augmented HP due to attack issues
-var HP = 6
+var HP: int = 6
 
 func _physics_process(delta: float) -> void:
 	#checking if the poopbar is filled or not
@@ -49,6 +59,9 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("bark") and is_on_floor():
 			velocity = Vector2.ZERO
 			play_special_animation("dog_lines")
+			
+		if Input.is_action_just_pressed("reset") and is_on_floor():
+			die()
 
 	# Movement Logic (Only runs if not busy, separed from the upper if for more organization)
 	if not busy:
@@ -123,20 +136,42 @@ func play_special_animation(animation_name: String) -> void:
 # Called from Doberman's script
 func take_dmg(dmg: int) -> void:
 	HP -= dmg
+	print(str(HP))
 	if HP <= 0:
-	# 	die()  <--- Not implemented yet
-		print(str(HP))
+		die() 
 	
 func spawn_poop() -> void:
-	# Instantiate the checkpoint poop to create it inside the game's memory, preloading is not enough
-	var new_poop = POOP_SCENE.instantiate()
-	
-	# could be owner instead of get_parent() too, this creates the previously instantiated poop
-	get_parent().add_child(new_poop)
+	# First time the checkpoint is generated
+	if poopPoint == null:
+		# Instantiate the checkpoint poop to create it inside the game's memory, preloading is not enough
+		poopPoint = POOP_SCENE.instantiate()
+		# could be owner instead of get_parent() too, this creates the previously instantiated poop
+		get_parent().add_child(poopPoint)
+	# Needed in case it falls to the infinity, it doesn't bug
+	poopPoint.linear_velocity = Vector2(0, 0)
 	# Gives the dog's position, depending if it's flipped or not, the X axis is slightly tweaked
 	# so it looks like the poop isn't spawning from him belly or smth, can be tweaked easily
 	if sprite.flip_h:
-		new_poop.global_position = global_position + Vector2(20, 0)
+		poopPoint.global_position = global_position + Vector2(20, 0)
 	else:
-		new_poop.global_position = global_position - Vector2(20, 0)
+		poopPoint.global_position = global_position - Vector2(20, 0)
 	
+
+
+func die() -> void:
+	if poopPoint != null:
+		# Moves the dog to the poop's position
+		global_position = poopPoint.global_position
+		# If it falls moving or falling, it resets the velocity
+		velocity = Vector2(0, 0)
+		# Refills HP bar
+		HP = 6
+	else:
+		# If there aren't any checkpoints, this resets the level
+		get_tree().reload_current_scene()
+
+
+func getCoins() -> void:
+	poopCoins += 1
+	# Temporal print to check if it stacks well
+	print("You currently have: " + str(poopCoins) + " secret poops.")
