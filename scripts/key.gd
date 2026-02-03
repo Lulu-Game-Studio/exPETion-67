@@ -11,6 +11,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		objective = body
 		catched = true
+		body.haveKey=true	
 		
 		# Disable collisions after being catched
 		$CollisionShape2D.set_deferred("disabled", true)
