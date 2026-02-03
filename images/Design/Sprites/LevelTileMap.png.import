@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://byble28ygi7ds"
+path="res://.godot/imported/LevelTileMap.png-2697e8545032e0afcfa84f06e305637c.res"
+
+[deps]
+
+source_file="res://images/Design/Sprites/LevelTileMap.png"
+dest_files=["res://.godot/imported/LevelTileMap.png-2697e8545032e0afcfa84f06e305637c.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

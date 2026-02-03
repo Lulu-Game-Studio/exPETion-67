@@ -1,24 +1,137 @@
-[gd_scene format=3 uid="uid://14w7ul0q6vmp"]
+[gd_scene format=3 uid="uid://mywsbvwjc1ic"]
 
-[ext_resource type="Script" uid="uid://buu33woeve42r" path="res://scripts/dog_house.gd" id="1_04oo2"]
+[ext_resource type="Script" path="res://scripts/dog_house.gd" id="1_04oo2"]
 [ext_resource type="Texture2D" uid="uid://bixueduvdnn60" path="res://images/Design/Sprites/global-sprites.png" id="2_xcxtb"]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_vtv60"]
-frame_0/texture = ExtResource("2_xcxtb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_04oo2"]
+atlas = ExtResource("2_xcxtb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70nhe"]
 size = Vector2(49, 48)
 
+[sub_resource type="Animation" id="Animation_xcxtb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_04oo2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
+[sub_resource type="Animation" id="Animation_kxtu7"]
+resource_name = "jaus"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_04oo2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.016666658, 0.3, 0.56666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [24, 25, 26]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhgh3"]
+_data = {
+&"RESET": SubResource("Animation_xcxtb"),
+&"jaus": SubResource("Animation_kxtu7")
+}
+
 [node name="DogHouse" type="Area2D" unique_id=540180918]
 script = ExtResource("1_04oo2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1779051372]
-texture = SubResource("AnimatedTexture_vtv60")
-region_enabled = true
-region_rect = Rect2(0, 96, 48, 48)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1390933327]
+texture = SubResource("AtlasTexture_04oo2")
+hframes = 8
+vframes = 8
+frame = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647113571]
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_70nhe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1708233095]
+libraries/ = SubResource("AnimationLibrary_xhgh3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -9,9 +9,7 @@ const poopIncrease = 15
 
 var haveKey = false
 
-
-
-@onready var poopBar : ProgressBar = $PoopBar/Sprite2D/poopBar
+@onready var poopBar : ProgressBar = $PoopBar/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
 
