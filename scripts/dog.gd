@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 			poopBar.value = 0
 			velocity = Vector2.ZERO
 			play_special_animation("dog_poop")
-			spawn_poop()
+			
 		# Next two if's passes because there isn't neither the sprite nor the animation to do that
 		if Input.is_action_just_pressed("6") and is_on_floor():
 			play_special_animation("dog_six")
@@ -127,6 +127,8 @@ func play_special_animation(animation_name: String) -> void:
 	anim.play(animation_name)
 	# It waits for the animation to end so you can play the game
 	await anim.animation_finished 
+	if animation_name == "dog_poop":
+		spawn_poop()
 	busy = false
 
 # Called from Doberman's script
@@ -148,9 +150,9 @@ func spawn_poop() -> void:
 	# Gives the dog's position, depending if it's flipped or not, the X axis is slightly tweaked
 	# so it looks like the poop isn't spawning from him belly or smth, can be tweaked easily
 	if sprite.flip_h:
-		poopPoint.global_position = global_position + Vector2(20, 0)
+		poopPoint.global_position = global_position + Vector2(30, 20)
 	else:
-		poopPoint.global_position = global_position - Vector2(20, 0)
+		poopPoint.global_position = global_position - Vector2(30, -20)
 	
 
 
