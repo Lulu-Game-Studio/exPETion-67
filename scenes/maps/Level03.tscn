@@ -138,6 +138,7 @@ position = Vector2(590, -293)
 
 [node name="DogHouse" parent="." unique_id=540180918 instance=ExtResource("6_rsb1d")]
 position = Vector2(2166, -160)
+level_number = 3
 
 [node name="doberman3" parent="." unique_id=1411544813 instance=ExtResource("5_gb3aq")]
 position = Vector2(2407, 81)
