@@ -60,12 +60,60 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=131348636]
 z_index = -1
-offset_left = 19.0
-offset_top = -65.0
-offset_right = 263.0
-offset_bottom = 94.0
+offset_left = 16.0
+offset_top = -68.0
+offset_right = 260.0
+offset_bottom = 91.0
 mouse_filter = 2
 color = Color(0.21960784, 0.73333335, 0.3137255, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1114310738]
+offset_left = 90.0
+offset_top = 43.0
+offset_right = 119.55139
+offset_bottom = 66.0
+scale = Vector2(0.37849298, 0.2029203)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="." unique_id=1569702020]
+offset_left = 126.0
+offset_top = 40.0
+offset_right = 155.55139
+offset_bottom = 63.0
+scale = Vector2(0.37849298, 0.2029203)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="." unique_id=1931750395]
+offset_left = 161.0
+offset_top = 46.0
+offset_right = 190.55139
+offset_bottom = 69.0
+scale = Vector2(0.37849298, 0.2029203)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label4" type="Label" parent="." unique_id=1675357400]
+offset_left = 138.0
+offset_top = 20.0
+offset_right = 167.55139
+offset_bottom = 43.0
+scale = Vector2(0.37849298, 0.2029203)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label5" type="Label" parent="." unique_id=832678033]
+offset_left = 102.0
+offset_top = 17.0
+offset_right = 131.55139
+offset_bottom = 40.0
+scale = Vector2(0.37849298, 0.2029203)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label6" type="Label" parent="." unique_id=1510523984]
+offset_left = 127.0
+offset_top = -5.0
+offset_right = 156.55139
+offset_bottom = 18.0
+scale = Vector2(0.37849298, 0.2029203)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 6" to="." method="_on_level_6_pressed"]
