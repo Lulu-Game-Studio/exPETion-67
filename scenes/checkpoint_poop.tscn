@@ -655,6 +655,7 @@ size = Vector2(24, 24)
 size = Vector2(24, 0)
 
 [node name="CheckpointPoop" type="RigidBody2D" unique_id=1777638885]
+lock_rotation = true
 script = ExtResource("1_cm1h1")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1153329771]

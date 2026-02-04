@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bko7qqfqls3so"]
 
-[ext_resource type="Script" uid="uid://0xoh2cq818eo" path="res://scripts/key.gd" id="1_fttkb"]
-[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="1_yk2u2"]
+[ext_resource type="Script" uid="uid://dp3yp5yi4ke6" path="res://scripts/key.gd" id="1_fttkb"]
+[ext_resource type="Texture2D" uid="uid://x22w1w6lrnaj" path="res://images/Design/Sprites/ui-sprites.png" id="1_yk2u2"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_p0yg6"]
 frame_0/texture = ExtResource("1_yk2u2")

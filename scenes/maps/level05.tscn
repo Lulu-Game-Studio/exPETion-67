@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://d1yhjwkfb4s5d" path="res://images/Design/Sprites/Chinatown background.png" id="1_fxq71"]
 [ext_resource type="Texture2D" uid="uid://bixueduvdnn60" path="res://images/Design/Sprites/global-sprites.png" id="2_e224s"]
 [ext_resource type="PackedScene" uid="uid://dflxbp6g8sef5" path="res://scenes/dog.tscn" id="3_tpxf8"]
-[ext_resource type="Texture2D" uid="uid://b6bh2uejgnnnv" path="res://images/Design/Sprites/ui-sprites.png" id="3_ui11a"]
+[ext_resource type="Texture2D" uid="uid://x22w1w6lrnaj" path="res://images/Design/Sprites/ui-sprites.png" id="3_ui11a"]
 [ext_resource type="PackedScene" uid="uid://c56o6yh6jwphl" path="res://scenes/Saw.tscn" id="6_upxg6"]
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="7_b6psu"]
-[ext_resource type="PackedScene" path="res://scenes/poop.tscn" id="7_jjydp"]
+[ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="7_jjydp"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="8_wqsk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcwf6"]
@@ -70,28 +70,28 @@ tile_set = SubResource("TileSet_tbt7t")
 position = Vector2(3334, -168)
 
 [node name="Saw" parent="." unique_id=1058612879 instance=ExtResource("6_upxg6")]
-position = Vector2(3517, -113)
+position = Vector2(3522, -109)
 
 [node name="Saw2" parent="." unique_id=1675269192 instance=ExtResource("6_upxg6")]
-position = Vector2(3554, -112)
+position = Vector2(3556, -109)
 
 [node name="Saw3" parent="." unique_id=548958511 instance=ExtResource("6_upxg6")]
-position = Vector2(3744, -116)
+position = Vector2(3750, -108)
 
 [node name="Saw4" parent="." unique_id=1536995166 instance=ExtResource("6_upxg6")]
-position = Vector2(3775, -115)
+position = Vector2(3784, -108)
 
 [node name="Saw5" parent="." unique_id=1587754753 instance=ExtResource("6_upxg6")]
-position = Vector2(3804, -115)
+position = Vector2(3825, -108)
 
 [node name="Saw6" parent="." unique_id=909051480 instance=ExtResource("6_upxg6")]
-position = Vector2(3835, -115)
+position = Vector2(3859, -108)
 
 [node name="Saw7" parent="." unique_id=533471837 instance=ExtResource("6_upxg6")]
-position = Vector2(3865, -115)
+position = Vector2(3804, -75)
 
 [node name="Saw8" parent="." unique_id=1024628658 instance=ExtResource("6_upxg6")]
-position = Vector2(4015, -119)
+position = Vector2(4019, -111)
 
 [node name="Saw9" parent="." unique_id=534734352 instance=ExtResource("6_upxg6")]
 position = Vector2(4517, -164)
@@ -106,28 +106,28 @@ position = Vector2(4837, -24)
 position = Vector2(185, -427)
 
 [node name="Saw10" parent="." unique_id=977801543 instance=ExtResource("6_upxg6")]
-position = Vector2(3586, -115)
+position = Vector2(3590, -109)
 
 [node name="Saw11" parent="." unique_id=2076097171 instance=ExtResource("6_upxg6")]
-position = Vector2(3622, -113)
+position = Vector2(3624, -109)
 
 [node name="Saw12" parent="." unique_id=959132434 instance=ExtResource("6_upxg6")]
-position = Vector2(3652, -115)
+position = Vector2(3658, -109)
 
 [node name="Saw13" parent="." unique_id=1727817767 instance=ExtResource("6_upxg6")]
-position = Vector2(3981, -118)
+position = Vector2(3981, -111)
 
 [node name="Saw14" parent="." unique_id=1782867569 instance=ExtResource("6_upxg6")]
-position = Vector2(4052, -118)
+position = Vector2(4056, -111)
 
 [node name="Saw15" parent="." unique_id=1337858371 instance=ExtResource("6_upxg6")]
-position = Vector2(4127, -114)
+position = Vector2(4127, -111)
 
 [node name="Saw17" parent="." unique_id=10984494 instance=ExtResource("6_upxg6")]
-position = Vector2(4162, -114)
+position = Vector2(4162, -111)
 
 [node name="Saw16" parent="." unique_id=525367333 instance=ExtResource("6_upxg6")]
-position = Vector2(4198, -114)
+position = Vector2(4198, -111)
 
 [node name="Saw18" parent="." unique_id=2085394340 instance=ExtResource("6_upxg6")]
 position = Vector2(4404, -134)
@@ -157,10 +157,10 @@ position = Vector2(5391, -284)
 position = Vector2(5533, -303)
 
 [node name="Saw27" parent="." unique_id=138770602 instance=ExtResource("6_upxg6")]
-position = Vector2(5561, -314)
+position = Vector2(5562, -320)
 
 [node name="Saw28" parent="." unique_id=1428927941 instance=ExtResource("6_upxg6")]
-position = Vector2(5704, -331)
+position = Vector2(5708, -341)
 
 [node name="doberman" parent="." unique_id=1155563102 instance=ExtResource("7_b6psu")]
 position = Vector2(2102, -49)

@@ -1,79 +1,66 @@
 extends CharacterBody2D
 
+var speed = 20.0 # Constant base speed
 
-var speed = 0.0
-
+var target_player: Node2D = null
+var busy: bool = false
 
 @onready var attack_timer: Timer = $Attack_timer
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var sprite: Sprite2D = %Sprite
 @onready var attack_area: Area2D = %Attack_area
 
-var busy: bool = false
-# Dog, it's used to reference to its name or group
-var target_player: Node2D = null
-
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# 1. Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if not speed and not busy:
-		# Currently doesn't work properly, runs while idle but this if works once
-		if animation_player.current_animation != "doberman_idle":
-			animation_player.play("doberman_idle")
-	else:
-		if animation_player.current_animation != "doberman_walk" and speed:
-			animation_player.play("doberman_walk")
-	move_and_slide()
-	
-func _on_dog_detection_area_body_entered(body: Node2D) -> void:
-	speed = 20.0
-	if body.name == "dog":
-		busy = true
-		# Here's where the dog is declared for the entire script, once it enters the zone
-		target_player = body
-		# Sign only gives a direction (-1, 1)
+	# 2. Logic of Movement
+	if target_player and not busy:
 		var direction = sign(target_player.global_position.x - global_position.x)
 		velocity.x = direction * speed
 		
-		# Classic flipping sprite
-		if direction:
-			if direction > 0:
-				sprite.flip_h = false
-			else:
-				sprite.flip_h = true
-	
+		# Sprite orientation
+		sprite.flip_h = direction < 0
+		
+		if animation_player.current_animation != "doberman_walk":
+			animation_player.play("doberman_walk")
+	else:
+		# If there is no one around or we are attacking, we gradually stop.
+		velocity.x = move_toward(velocity.x, 0, speed)
+		# We only set it to idle if we're not in the middle of an attack animation.
+		if not busy and animation_player.current_animation != "doberman_idle":
+			animation_player.play("doberman_idle")
+
+	move_and_slide()
+
+# --- Signals ---
+
+func _on_dog_detection_area_body_entered(body: Node2D) -> void:
+	if body.name == "dog":
+		target_player = body
+
+func _on_dog_detection_area_body_exited(body: Node2D) -> void:
+	if body == target_player:
+		target_player = null # When you lose sight of it, stop chasing it
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
-	if body.name == "dog":
-		speed = 0
-		velocity.x = 0
-		# So it doesn't start attacking from just entering the zone, would be a safe hit
+	if body == target_player:
+		busy = true # It stops to attack
 		animation_player.play("doberman_idle")
-		# Doberman's attacks are restricted by this timer
 		attack_timer.start()
 
-
 func _on_attack_timer_timeout() -> void:
-	# Loops the bark animation while the dog's inside the attack radius
-	animation_player.play("doberman_attack")
-	
-	## If it already recognized the player (target_player gets its value during the detection area),
-	## it generates a list of all the bodies colliding.
-	if target_player != null:
-		var bodyList = attack_area.get_overlapping_bodies()
-		print(bodyList)
+	if target_player:
+		animation_player.play("doberman_attack")
 		
-		# if target_player (the dog) is in there, does damage
+		# Damage check
+		var bodyList = attack_area.get_overlapping_bodies()
 		if target_player in bodyList:
 			target_player.take_dmg(1)
-			
-
-# The Doberman idles if the dog exits its detection area
-func _on_dog_detection_area_body_exited(body: Node2D) -> void:
-	# Could have used body.name == "dog", same effect
-	if body.is_in_group("player"):
-		velocity.x = 0
-		speed = 0.0
-		animation_player.play("doberman_idle")
+		
+		# If the player is no longer in the attacking area, we are no longer occupied
+		var bodies_en_ataque = attack_area.get_overlapping_bodies()
+		if not target_player in bodies_en_ataque:
+			busy = false
+			attack_timer.stop()
