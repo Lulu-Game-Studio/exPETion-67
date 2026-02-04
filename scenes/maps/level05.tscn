@@ -68,7 +68,7 @@ tile_map_data = PackedByteArray("AAAEAO7/AAABAAEAAAAEAO//AAABAAEAAAAEAPD/AAABAAE
 tile_set = SubResource("TileSet_tbt7t")
 
 [node name="dog" parent="." unique_id=1787895375 instance=ExtResource("3_tpxf8")]
-position = Vector2(143, -940)
+
 
 [node name="Saw" parent="." unique_id=1058612879 instance=ExtResource("6_upxg6")]
 position = Vector2(3522, -109)
