@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="7_b6psu"]
 [ext_resource type="PackedScene" path="res://scenes/poop.tscn" id="7_jjydp"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="8_wqsk5"]
-[ext_resource type="PackedScene" uid="uid://mywsbvwjc1ic" path="res://scenes/Dog_House.tscn" id="9_b6psu"]
+[ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="9_b6psu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcwf6"]
 texture = ExtResource("2_e224s")
@@ -173,4 +173,5 @@ position = Vector2(2734, -85)
 position = Vector2(6996, -459)
 
 [node name="DogHouse" parent="." unique_id=540180918 instance=ExtResource("9_b6psu")]
-position = Vector2(7287, -167)
+position = Vector2(7378, -160)
+level_number = 5
