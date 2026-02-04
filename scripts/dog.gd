@@ -159,7 +159,7 @@ func spawn_poop() -> void:
 func die() -> void:
 	if poopPoint != null:
 		# Moves the dog to the poop's position
-		global_position = poopPoint.global_position
+		global_position = poopPoint.global_position +  Vector2(0, -20)
 		# If it falls moving or falling, it resets the velocity
 		velocity = Vector2(0, 0)
 		# Refills HP bar
