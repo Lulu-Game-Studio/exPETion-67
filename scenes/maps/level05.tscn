@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="7_b6psu"]
 [ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="7_jjydp"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="8_wqsk5"]
+[ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="9_b6psu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcwf6"]
 texture = ExtResource("2_e224s")
@@ -67,7 +68,7 @@ tile_map_data = PackedByteArray("AAAEAO7/AAABAAEAAAAEAO//AAABAAEAAAAEAPD/AAABAAE
 tile_set = SubResource("TileSet_tbt7t")
 
 [node name="dog" parent="." unique_id=1787895375 instance=ExtResource("3_tpxf8")]
-position = Vector2(3334, -168)
+position = Vector2(143, -940)
 
 [node name="Saw" parent="." unique_id=1058612879 instance=ExtResource("6_upxg6")]
 position = Vector2(3522, -109)
@@ -170,3 +171,7 @@ position = Vector2(2734, -85)
 
 [node name="KEY" parent="." unique_id=329449611 instance=ExtResource("8_wqsk5")]
 position = Vector2(6996, -459)
+
+[node name="DogHouse" parent="." unique_id=540180918 instance=ExtResource("9_b6psu")]
+position = Vector2(7378, -160)
+level_number = 5

@@ -1,29 +1,31 @@
 extends Node
 
 var levels = {
-	"Level1": {"unlocked": true, "items": 0},
-	"Level2": {"unlocked": false, "items": 0},
-	"Level3": {"unlocked": false, "items": 0},
-	"Level4": {"unlocked": false, "items": 0},
-	"Level5": {"unlocked": false, "items": 0},
-	"Level6": {"unlocked": false, "items": 0},
-	"Level7": {"unlocked": false, "items": 0} 
+	1: {"unlocked": true, "items": 0},
+	2: {"unlocked": false, "items": 0},
+	3: {"unlocked": false, "items": 0},
+	4: {"unlocked": false, "items": 0},
+	5: {"unlocked": false, "items": 0},
+	6: {"unlocked": false, "items": 0},
+	7: {"unlocked": false, "items": 0} 
 }
 
-func completed_level(level_num, poopCuantity):
-	var level_key = "Level"+ str(level_num)
-	levels[level_key].items = poopCuantity
-	
-	if level_num<6:
-		var nextLevel = "Level"+ str(level_num+1)
-		levels[nextLevel].unlocked=true
-		
-	checkSecretLevel()
-	
+func completed_level(level_num: int, poopCuantity: int):
+
+	if levels.has(level_num):
+
+		if poopCuantity > levels[level_num].items:
+			levels[level_num].items = poopCuantity
+
+		if level_num < 6:
+			levels[level_num + 1].unlocked = true
+			
+		checkSecretLevel()
+
 func checkSecretLevel():
 	var totalPoops = 0 
 	for i in range(1, 7):
-		totalPoops+=levels["Levels" + str(i)].items
+		totalPoops += levels[i].items
 		
-	if totalPoops==18:
-		levels["Level7"].unlocked =true
+	if totalPoops >= 18:
+		levels[7].unlocked = true
