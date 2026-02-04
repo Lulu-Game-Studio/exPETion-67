@@ -277,7 +277,7 @@ _data = {
 size = Vector2(568, 304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb1cg"]
-size = Vector2(192, 108)
+size = Vector2(192, 32)
 
 [node name="doberman" type="CharacterBody2D" unique_id=1155563102]
 collision_layer = 2
