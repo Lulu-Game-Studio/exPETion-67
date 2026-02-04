@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dodckjwrtfowv"]
 
-[ext_resource type="Script" uid="uid://bgw42q4cf3pes" path="res://scripts/checkpoint_poop.gd" id="1_cm1h1"]
+[ext_resource type="Script" path="res://scripts/checkpoint_poop.gd" id="1_cm1h1"]
 [ext_resource type="Texture2D" uid="uid://mjh0wd4p7fjf" path="res://images/Design/Animation/poopsprite.png" id="1_vrlrp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm1h1"]
