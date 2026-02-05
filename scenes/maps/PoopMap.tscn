@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkidqgjtnl6uh"]
 
-[ext_resource type="Script" uid="uid://bxc5w3k6dklw6" path="res://PoopMap.gd" id="1_dqfy6"]
+[ext_resource type="Script" uid="uid://bxc5w3k6dklw6" path="res://scripts/PoopMap.gd" id="1_dqfy6"]
 [ext_resource type="Texture2D" uid="uid://bn4o5xhfvn2df" path="res://images/Design/Sprites/PoopMap.png" id="2_j8765"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jg6bc"]

@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://uk6s4lhgg5bl" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
 [ext_resource type="Texture2D" uid="uid://o0qggqeceuh4" path="res://images/Design/Animation/sixsprite.png" id="9_jlmqp"]
 [ext_resource type="PackedScene" uid="uid://c4uybjjfrmt7c" path="res://scenes/UI/poop_bar.tscn" id="10_jlmqp"]
+[ext_resource type="PackedScene" uid="uid://derye8qmrboq5" path="res://scenes/UI/poop_hud.tscn" id="12_4ke0b"]
+[ext_resource type="Script" uid="uid://c75tgvn17lpws" path="res://scripts/poop_hud.gd" id="13_btgii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
 size = Vector2(41, 32)
@@ -537,3 +539,9 @@ autoplay = &"dog_idle"
 [node name="PoopBar" parent="." unique_id=1897186035 instance=ExtResource("10_jlmqp")]
 z_index = 1
 position = Vector2(-6.0000005, -37)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1206262607]
+
+[node name="PoopHUD" parent="CanvasLayer" unique_id=474274694 instance=ExtResource("12_4ke0b")]
+position = Vector2(145, -100)
+script = ExtResource("13_btgii")

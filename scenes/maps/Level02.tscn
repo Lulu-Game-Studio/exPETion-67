@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="4_lxnwh"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="5_03ha6"]
 [ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="6_03ha6"]
-[ext_resource type="Script" uid="uid://dm3l5nog1w4r0" path="res://scenes/maps/lake.gd" id="7_v1cr5"]
+[ext_resource type="Script" uid="uid://dm3l5nog1w4r0" path="res://scripts/lake.gd" id="7_v1cr5"]
 [ext_resource type="PackedScene" uid="uid://bna50ik7vgp1v" path="res://scenes/Car.tscn" id="8_8w2rd"]
-[ext_resource type="Script" uid="uid://d3sc1wgjtf3a8" path="res://scenes/car.gd" id="9_kq8bc"]
-[ext_resource type="Script" uid="uid://b2hgkkptkajp2" path="res://scenes/car2.gd" id="10_kq8bc"]
+[ext_resource type="Script" uid="uid://d3sc1wgjtf3a8" path="res://scripts/car.gd" id="9_kq8bc"]
+[ext_resource type="Script" uid="uid://b2hgkkptkajp2" path="res://scripts/car2.gd" id="10_kq8bc"]
 [ext_resource type="Texture2D" uid="uid://dfhakhs3vnet0" path="res://images/Design/Sprites/CAMANOLO.png" id="11_dx4eh"]
 [ext_resource type="Texture2D" uid="uid://daybwgnfjm0bd" path="res://images/Design/Sprites/Sky.png" id="12_f2f0e"]
 

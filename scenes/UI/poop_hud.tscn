@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://derye8qmrboq5"]
+
+[ext_resource type="Texture2D" uid="uid://x22w1w6lrnaj" path="res://images/Design/Sprites/ui-sprites.png" id="1_8a4nh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_840dv"]
+atlas = ExtResource("1_8a4nh")
+region = Rect2(0, 0, 16, 16)
+
+[node name="PoopHUD" type="Node2D" unique_id=474274694]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234796659]
+texture = SubResource("AtlasTexture_840dv")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=689818390]
+offset_left = 11.0
+offset_top = -6.0
+offset_right = 41.0
+offset_bottom = 17.0
+scale = Vector2(0.81555223, 0.51107603)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
