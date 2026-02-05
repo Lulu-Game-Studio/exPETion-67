@@ -515,6 +515,10 @@ _data = {
 collision_mask = 7
 script = ExtResource("1_iaoh4")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120 groups=["player"]]
+zoom = Vector2(2.995, 2.995)
+position_smoothing_speed = 10.0
+
 [node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332 groups=["player"]]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
@@ -526,11 +530,6 @@ hframes = 9
 position = Vector2(-1.5, 7)
 shape = SubResource("RectangleShape2D_iaoh4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120 groups=["player"]]
-zoom = Vector2(2.995, 2.995)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
 [node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140 groups=["player"]]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gmowd")
@@ -540,8 +539,10 @@ autoplay = &"dog_idle"
 z_index = 1
 position = Vector2(-6.0000005, -37)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1206262607]
-
-[node name="PoopHUD" parent="CanvasLayer" unique_id=474274694 instance=ExtResource("12_4ke0b")]
-position = Vector2(145, -100)
+[node name="PoopHUD" parent="." unique_id=474274694 instance=ExtResource("12_4ke0b")]
+offset_left = -313.0
+offset_top = -153.0
+offset_right = -262.0
+offset_bottom = -135.0
+size_flags_vertical = 0
 script = ExtResource("13_btgii")
