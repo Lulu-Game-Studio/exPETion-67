@@ -1,5 +1,8 @@
 extends Node
 
+
+var totalPoops = 0
+
 var levels = {
 	1: {"unlocked": true, "items": 0},
 	2: {"unlocked": false, "items": 0},
@@ -23,7 +26,6 @@ func completed_level(level_num: int, poopCuantity: int):
 		checkSecretLevel()
 
 func checkSecretLevel():
-	var totalPoops = 0 
 	for i in range(1, 7):
 		totalPoops += levels[i].items
 		

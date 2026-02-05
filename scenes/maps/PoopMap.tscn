@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dkidqgjtnl6uh"]
+
+[ext_resource type="Script" uid="uid://bxc5w3k6dklw6" path="res://PoopMap.gd" id="1_dqfy6"]
+[ext_resource type="Texture2D" uid="uid://bn4o5xhfvn2df" path="res://images/Design/Sprites/PoopMap.png" id="2_j8765"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jg6bc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqfy6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8765"]
+
+[node name="Node2D" type="Node2D" unique_id=1067631466]
+script = ExtResource("1_dqfy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015810703]
+light_mask = 0
+position = Vector2(135, 11)
+texture = ExtResource("2_j8765")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1198651927]
+zoom = Vector2(5, 5)
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1497957521]
+z_index = -1
+offset_left = -119.0
+offset_top = -87.0
+offset_right = 125.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.39901474, 0.28123942, 0.21541709, 1)
+
+[node name="Button" type="Button" parent="." unique_id=597846228]
+offset_left = 89.0
+offset_top = -21.0
+offset_right = 172.0
+offset_bottom = 48.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jg6bc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dqfy6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j8765")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
