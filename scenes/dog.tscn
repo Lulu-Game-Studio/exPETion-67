@@ -509,6 +509,9 @@ _data = {
 &"dog_withoutlines": SubResource("Animation_gmowd")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3i3p"]
+size = Vector2(146, 32.5)
+
 [node name="dog" type="CharacterBody2D" unique_id=1787895375 groups=["player"]]
 collision_mask = 7
 script = ExtResource("1_iaoh4")
@@ -537,3 +540,13 @@ autoplay = &"dog_idle"
 [node name="PoopBar" parent="." unique_id=1897186035 instance=ExtResource("10_jlmqp")]
 z_index = 1
 position = Vector2(-6.0000005, -37)
+
+[node name="attack" type="Area2D" parent="." unique_id=357548903]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack" unique_id=1421415396]
+position = Vector2(-1, 7)
+shape = SubResource("RectangleShape2D_v3i3p")
+debug_color = Color(0.95109946, 0.18239215, 0.3336687, 0.41960785)
+
+[connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
+[connection signal="body_exited" from="attack" to="." method="_on_attack_body_exited"]

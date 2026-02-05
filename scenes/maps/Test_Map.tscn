@@ -1,14 +1,16 @@
-[gd_scene format=4 uid="uid://bcmuv7kqub3xm"]
+[gd_scene format=4 uid="uid://dooalm3e8roc0"]
 
-[ext_resource type="Texture2D" uid="uid://5mnqcj4a8dom" path="res://scenes/maps/SSBU_Big_Battlefield.webp" id="1_hufrt"]
 [ext_resource type="PackedScene" uid="uid://dflxbp6g8sef5" path="res://scenes/dog.tscn" id="2_43dtx"]
 [ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="3_0c1xn"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="4_kn87d"]
 [ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="6_6txmc"]
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="6_kily2"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lphnh"]
+load_path = "res://.godot/imported/SSBU_Big_Battlefield.webp-938285941c585bcaacdb5515835b8c6d.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43dtx"]
-texture = ExtResource("1_hufrt")
+texture = SubResource("CompressedTexture2D_lphnh")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
