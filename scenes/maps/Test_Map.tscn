@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="6_kily2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lphnh"]
-load_path = "res://.godot/imported/SSBU_Big_Battlefield.webp-938285941c585bcaacdb5515835b8c6d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43dtx"]
 texture = SubResource("CompressedTexture2D_lphnh")

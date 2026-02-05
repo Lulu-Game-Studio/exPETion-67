@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://uk6s4lhgg5bl" path="res://images/Design/Animation/barksprite without lines.png" id="9_ei5el"]
 [ext_resource type="Texture2D" uid="uid://o0qggqeceuh4" path="res://images/Design/Animation/sixsprite.png" id="9_jlmqp"]
 [ext_resource type="PackedScene" uid="uid://c4uybjjfrmt7c" path="res://scenes/UI/poop_bar.tscn" id="10_jlmqp"]
+[ext_resource type="PackedScene" uid="uid://derye8qmrboq5" path="res://scenes/UI/poop_hud.tscn" id="12_4ke0b"]
+[ext_resource type="Script" uid="uid://c75tgvn17lpws" path="res://scripts/poop_hud.gd" id="13_btgii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaoh4"]
 size = Vector2(41, 32)
@@ -516,6 +518,10 @@ size = Vector2(146, 32.5)
 collision_mask = 7
 script = ExtResource("1_iaoh4")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120 groups=["player"]]
+zoom = Vector2(2.995, 2.995)
+position_smoothing_speed = 10.0
+
 [node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332 groups=["player"]]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
@@ -526,11 +532,6 @@ hframes = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530 groups=["player"]]
 position = Vector2(-1.5, 7)
 shape = SubResource("RectangleShape2D_iaoh4")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=575198120 groups=["player"]]
-zoom = Vector2(2.995, 2.995)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140 groups=["player"]]
 unique_name_in_owner = true
@@ -550,3 +551,4 @@ debug_color = Color(0.95109946, 0.18239215, 0.3336687, 0.41960785)
 
 [connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
 [connection signal="body_exited" from="attack" to="." method="_on_attack_body_exited"]
+
