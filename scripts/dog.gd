@@ -173,3 +173,8 @@ func getCoins() -> void:
 	poopCoins += 1
 	# Temporal print to check if it stacks well
 	print("You currently have: " + str(poopCoins) + " secret poops.")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "dog" or body.is_in_group("player"):
+		die()
