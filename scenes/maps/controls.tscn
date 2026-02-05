@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bpmm8of5c2wkq"]
+
+[ext_resource type="Script" uid="uid://ddi5lnhx2p8p4" path="res://scenes/maps/controls.gd" id="1_jbuum"]
+[ext_resource type="Texture2D" uid="uid://cif1ythgwcrl2" path="res://images/Design/Sprites/controles.jpg" id="1_jpjd5"]
+
+[node name="Node2D" type="Node2D" unique_id=716634430]
+script = ExtResource("1_jbuum")
+
+[node name="Controles" type="Sprite2D" parent="." unique_id=2030064788]
+position = Vector2(515, 504)
+texture = ExtResource("1_jpjd5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1430532425]
+position = Vector2(522, 504)
+zoom = Vector2(1.2, 0.65)
