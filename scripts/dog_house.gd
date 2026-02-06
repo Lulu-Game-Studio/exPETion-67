@@ -19,5 +19,6 @@ func open_house(dog):
 		return
 
 	Global.completed_level(level_number, dog.poopCoins)
-	
+	if level_number == 7:
+		get_tree().change_scene_to_file()
 	get_tree().change_scene_to_file("res://scenes/maps/Map.tscn")
