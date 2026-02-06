@@ -23,6 +23,7 @@ func completed_level(level_num: int, poopCuantity: int):
 		if level_num < 6:
 			levels[level_num + 1].unlocked = true
 			
+			
 		checkSecretLevel()
 
 func checkSecretLevel():
