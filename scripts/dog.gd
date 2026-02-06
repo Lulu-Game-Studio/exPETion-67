@@ -159,9 +159,9 @@ func spawn_poop() -> void:
 	# Gives the dog's position, depending if it's flipped or not, the X axis is slightly tweaked
 	# so it looks like the poop isn't spawning from him belly or smth, can be tweaked easily
 	if sprite.flip_h:
-		poopPoint.global_position = global_position + Vector2(30, 20)
+		poopPoint.global_position = global_position + Vector2(10, 10)
 	else:
-		poopPoint.global_position = global_position - Vector2(30, -20)
+		poopPoint.global_position = global_position - Vector2(35, 10)
 	
 
 
