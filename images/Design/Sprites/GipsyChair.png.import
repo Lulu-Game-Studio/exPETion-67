@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcbe4brlqqs6g"
-path="res://.godot/imported/R.jpeg-ae491d0cb323bd609c05bf389440ab9c.ctex"
+uid="uid://cx610aadb3x2b"
+path="res://.godot/imported/GipsyChair.png-c8c7ad7265bebc104c685f67a4c275fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/R.jpeg"
-dest_files=["res://.godot/imported/R.jpeg-ae491d0cb323bd609c05bf389440ab9c.ctex"]
+source_file="res://images/Design/Sprites/GipsyChair.png"
+dest_files=["res://.godot/imported/GipsyChair.png-c8c7ad7265bebc104c685f67a4c275fc.ctex"]
 
 [params]
 
