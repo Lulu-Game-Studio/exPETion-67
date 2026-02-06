@@ -497,7 +497,6 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gmowd"]
 _data = {
-<<<<<<< HEAD
 &"RESET": SubResource("Animation_qjqk5"),
 &"dog_fall": SubResource("Animation_4ke0b"),
 &"dog_ground": SubResource("Animation_btgii"),
@@ -510,17 +509,6 @@ _data = {
 &"dog_six": SubResource("Animation_ydcs6"),
 &"dog_walk": SubResource("Animation_x8of7"),
 &"dog_withoutlines": SubResource("Animation_gmowd")
-=======
-&"RESET": SubResource("Animation_vwjdu"),
-&"dog_idle": SubResource("Animation_qjqk5"),
-&"dog_jump": SubResource("Animation_v3i3p"),
-&"dog_lines": SubResource("Animation_ei5el"),
-&"dog_poop": SubResource("Animation_tpbal"),
-&"dog_run": SubResource("Animation_iaoh4"),
-&"dog_sit": SubResource("Animation_i2xh6"),
-&"dog_walk": SubResource("Animation_laypt"),
-&"dog_withotlines": SubResource("Animation_jlmqp")
->>>>>>> 973f468bb5f76df4d06c30f23871bfd2ee3cd36b
 }
 
 [node name="dog" type="CharacterBody2D" unique_id=1787895375 groups=["player"]]
@@ -534,15 +522,9 @@ position_smoothing_speed = 10.0
 [node name="dog_sprite" type="Sprite2D" parent="." unique_id=989392332 groups=["player"]]
 unique_name_in_owner = true
 position = Vector2(-2, 3)
-<<<<<<< HEAD
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_ei5el")
 hframes = 9
-=======
-texture = ExtResource("2_vwjdu")
-hframes = 11
-frame = 9
->>>>>>> 973f468bb5f76df4d06c30f23871bfd2ee3cd36b
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223300530 groups=["player"]]
 position = Vector2(-1.5, 7)
@@ -551,7 +533,6 @@ shape = SubResource("RectangleShape2D_iaoh4")
 [node name="AnimationDog" type="AnimationPlayer" parent="." unique_id=1174433140 groups=["player"]]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gmowd")
-<<<<<<< HEAD
 autoplay = &"dog_idle"
 
 [node name="PoopBar" parent="." unique_id=1897186035 instance=ExtResource("10_jlmqp")]
@@ -565,5 +546,3 @@ offset_right = -262.0
 offset_bottom = -135.0
 size_flags_vertical = 0
 script = ExtResource("13_btgii")
-=======
->>>>>>> 973f468bb5f76df4d06c30f23871bfd2ee3cd36b

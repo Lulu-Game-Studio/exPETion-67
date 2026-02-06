@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://m5hutmqmewiw" path="res://images/Design/Sprites/GipsyChairtile.png" id="3_57jv6"]
 [ext_resource type="PackedScene" uid="uid://dflxbp6g8sef5" path="res://scenes/dog.tscn" id="3_cy7mq"]
 [ext_resource type="PackedScene" uid="uid://c56o6yh6jwphl" path="res://scenes/Saw.tscn" id="4_cy7mq"]
-[ext_resource type="PackedScene" path="res://scenes/poop.tscn" id="5_57jv6"]
+[ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="5_57jv6"]
 [ext_resource type="FontFile" uid="uid://cgcwtiboburhh" path="res://Fonts/lower-pixel/LowresPixel-Regular.otf" id="7_pogft"]
 [ext_resource type="PackedScene" uid="uid://dbjtm06g7w3tg" path="res://scenes/gat.tscn" id="8_wjpnf"]
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="9_dakxw"]
-[ext_resource type="PackedScene" uid="uid://mywsbvwjc1ic" path="res://scenes/Dog_House.tscn" id="10_aw2h8"]
+[ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="10_aw2h8"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="11_eyam1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57jv6"]
