@@ -136,7 +136,9 @@ func play_special_animation(animation_name: String) -> void:
 		spawn_poop()
 	if animation_name == "dog_lines":
 		if doberman != null:
-			doberman.queue_free()
+			var animD = doberman.get_node("AnimationPlayer")
+			animD.play("doberman_death")
+			await animD.animation_finished
 		
 	busy = false
 
@@ -200,4 +202,6 @@ func _on_attack_body_exited(body: Node2D) -> void:
 
 func attack() -> void:
 	if doberman:
-		doberman.queue_free()
+		var animD = doberman.get_node("AnimationPlayer")
+		animD.play("doberman_death")
+		await animD.animation_finished
