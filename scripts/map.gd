@@ -10,6 +10,10 @@ func upload_map():
 	conf_bot(5, $"Level 5", $Label5)
 	conf_bot(6, $"Level 6", $Label6)
 #	conf_bot(7, $Level7Button, $Label7)
+func _process(delta: float):
+	if Global.totalPoops == 18:
+		get_tree().change_scene_to_file("res://scenes/maps/PoopMap.tscn")
+
 func conf_bot(levelNum, button, Labels):
 	var info = Global.levels[levelNum]
 	
