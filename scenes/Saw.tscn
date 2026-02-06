@@ -58,6 +58,7 @@ frame = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2100321599]
 libraries/ = SubResource("AnimationLibrary_txfdc")
+autoplay = &"saw_spinning"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1427971879]
 shape = SubResource("CircleShape2D_21sap")

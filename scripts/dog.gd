@@ -19,6 +19,8 @@ var poopPoint: RigidBody2D = null
 # Collects secret poops throughout the game
 var poopCoins: int = 0
 
+var doberman: Node2D = null
+
 @onready var poopBar : ProgressBar = $PoopBar/poopBar
 @onready var sprite: Sprite2D = %dog_sprite
 @onready var anim: AnimationPlayer = %AnimationDog
@@ -54,7 +56,10 @@ func _physics_process(delta: float) -> void:
 			
 		# Next two if's passes because there isn't neither the sprite nor the animation to do that
 		if Input.is_action_just_pressed("6") and is_on_floor():
+			if sprite.flip_h:
+				sprite.flip_h = false
 			play_special_animation("dog_six")
+			
 
 		if Input.is_action_just_pressed("bark") and is_on_floor():
 			velocity = Vector2.ZERO
@@ -129,6 +134,10 @@ func play_special_animation(animation_name: String) -> void:
 	await anim.animation_finished 
 	if animation_name == "dog_poop":
 		spawn_poop()
+	if animation_name == "dog_lines":
+		if doberman != null:
+			doberman.queue_free()
+		
 	busy = false
 
 # Called from Doberman's script
@@ -150,9 +159,9 @@ func spawn_poop() -> void:
 	# Gives the dog's position, depending if it's flipped or not, the X axis is slightly tweaked
 	# so it looks like the poop isn't spawning from him belly or smth, can be tweaked easily
 	if sprite.flip_h:
-		poopPoint.global_position = global_position + Vector2(30, 20)
+		poopPoint.global_position = global_position + Vector2(10, 10)
 	else:
-		poopPoint.global_position = global_position - Vector2(30, -20)
+		poopPoint.global_position = global_position - Vector2(35, 10)
 	
 
 
@@ -178,3 +187,13 @@ func getCoins() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "dog" or body.is_in_group("player"):
 		die()
+
+
+func _on_attack_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		doberman = body
+
+
+func _on_attack_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		doberman = null
