@@ -277,9 +277,9 @@ _data = {
 size = Vector2(568, 304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb1cg"]
-size = Vector2(192, 32)
+size = Vector2(192, 37)
 
-[node name="doberman" type="CharacterBody2D" unique_id=1155563102]
+[node name="doberman" type="CharacterBody2D" unique_id=1155563102 groups=["Enemy"]]
 collision_layer = 2
 script = ExtResource("1_aiqim")
 
@@ -309,11 +309,12 @@ debug_color = Color(0.32156864, 0.8039216, 0, 0.2901961)
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_area" unique_id=1545023173]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_tb1cg")
 debug_color = Color(0.9831055, 0, 0.36039197, 0.41960785)
 
 [node name="Attack_timer" type="Timer" parent="." unique_id=926676621]
-wait_time = 2.0
+wait_time = 1.2999999999999998
 
 [connection signal="body_entered" from="Dog_detection_area" to="." method="_on_dog_detection_area_body_entered"]
 [connection signal="body_exited" from="Dog_detection_area" to="." method="_on_dog_detection_area_body_exited"]
