@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://2x4kiuljfk36" path="res://scripts/map.gd" id="2_w7c4r"]
 [ext_resource type="PackedScene" uid="uid://1ykex3osus64" path="res://scenes/UI/LevelButton.tscn" id="3_exqhh"]
 [ext_resource type="FontFile" uid="uid://cgcwtiboburhh" path="res://Fonts/lower-pixel/LowresPixel-Regular.otf" id="4_exqhh"]
+[ext_resource type="AudioStream" uid="uid://b5utwngrdql1a" path="res://sounds/pou.mp3" id="5_hbv62"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7c4r"]
 
@@ -142,6 +143,12 @@ offset_right = 156.55139
 offset_bottom = 18.0
 scale = Vector2(0.37849298, 0.2029203)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=757342758]
+stream = ExtResource("5_hbv62")
+volume_db = -38.376
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 6" to="." method="_on_level_6_pressed"]

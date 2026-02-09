@@ -87,6 +87,7 @@ pattern_1 = SubResource("TileMapPattern_iod03")
 offset_right = 6952.0
 offset_bottom = 655.0
 texture = ExtResource("1_cpsmf")
+stretch_mode = 1
 
 [node name="R" type="Sprite2D" parent="." unique_id=2112564661]
 position = Vector2(1347, 38)

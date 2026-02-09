@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cby70of344lmj" path="res://scenes/maps/Endings/BadEnding.jpeg" id="1_qey2w"]
 [ext_resource type="Script" uid="uid://diyv71i2hfwvq" path="res://scripts/bad_ending.gd" id="1_sk4g6"]
 [ext_resource type="PackedScene" uid="uid://b11kjpaxd5qnn" path="res://scenes/UI/MapButton.tscn" id="2_sk4g6"]
+[ext_resource type="AudioStream" uid="uid://cyyri7nst15qn" path="res://sounds/sad-meow-song.mp3" id="4_o5l5e"]
 
 [node name="Node2D" type="Node2D" unique_id=1809439429]
 script = ExtResource("1_sk4g6")
@@ -18,6 +19,10 @@ offset_left = 232.0
 offset_top = 352.0
 offset_right = 264.0
 offset_bottom = 384.0
-script = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=145738241]
+stream = ExtResource("4_o5l5e")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Control" to="." method="_on_control_pressed"]
