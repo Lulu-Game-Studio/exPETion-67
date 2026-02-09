@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="5_gb3aq"]
 [ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="6_rsb1d"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="7_7jgel"]
+[ext_resource type="AudioStream" uid="uid://0mcacyw02hcx" path="res://sounds/Level 3 Soundtrack.mp3" id="11_qnd2e"]
 
 [sub_resource type="Gradient" id="Gradient_7jgel"]
 offsets = PackedFloat32Array(0.0751634, 1)
@@ -262,5 +263,10 @@ scale = Vector2(1.046875, 1)
 color = Color(1, 1, 0, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_kcilt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=670240906]
+stream = ExtResource("11_qnd2e")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Area2D" to="dog" method="_on_area_2d_body_entered"]

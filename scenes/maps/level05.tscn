@@ -182,3 +182,8 @@ level_number = 5
 stream = ExtResource("10_wqsk5")
 autoplay = true
 parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1551047567]
+stream = ExtResource("10_wqsk5")
+autoplay = true
+parameters/looping = true

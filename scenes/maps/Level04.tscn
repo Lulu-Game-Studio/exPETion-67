@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="9_dakxw"]
 [ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="10_aw2h8"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="11_eyam1"]
+[ext_resource type="AudioStream" uid="uid://kp7nmocdxym7" path="res://sounds/Level 4 Soundtrack.mp3" id="12_eyam1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57jv6"]
 texture = ExtResource("1_5lkgw")
@@ -294,3 +295,8 @@ position = Vector2(1223, 1565)
 
 [node name="Saw29" parent="." unique_id=1224812826 instance=ExtResource("4_cy7mq")]
 position = Vector2(1249, 1565)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=321770768]
+stream = ExtResource("12_eyam1")
+autoplay = true
+parameters/looping = true

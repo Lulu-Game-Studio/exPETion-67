@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b2hgkkptkajp2" path="res://scripts/car2.gd" id="10_kq8bc"]
 [ext_resource type="Texture2D" uid="uid://dfhakhs3vnet0" path="res://images/Design/Sprites/CAMANOLO.png" id="11_dx4eh"]
 [ext_resource type="Texture2D" uid="uid://daybwgnfjm0bd" path="res://images/Design/Sprites/Sky.png" id="12_f2f0e"]
+[ext_resource type="AudioStream" uid="uid://btuqic27iqgvj" path="res://sounds/Level 2 Soundtrack.mp3" id="13_g33n0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0idui"]
 texture = ExtResource("1_r4t6t")
@@ -175,6 +176,11 @@ z_index = -2
 position = Vector2(507.12494, 137.26563)
 scale = Vector2(2.1728122, 1.5893164)
 texture = ExtResource("12_f2f0e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=686356191]
+stream = ExtResource("13_g33n0")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]

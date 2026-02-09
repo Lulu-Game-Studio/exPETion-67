@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="11_fvnar"]
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="11_iutqx"]
 [ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="12_iutqx"]
+[ext_resource type="AudioStream" uid="uid://cxis60llyvgb" path="res://sounds/Level 1 Soundtrack.mp3" id="13_fvnar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0idui"]
 texture = ExtResource("1_4e331")
@@ -199,5 +200,10 @@ position = Vector2(2713, 150)
 
 [node name="DogHouse" parent="." unique_id=540180918 instance=ExtResource("12_iutqx")]
 position = Vector2(4078, 451)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2082915363]
+stream = ExtResource("13_fvnar")
+autoplay = true
+parameters/looping = true
 
 [editable path="dog"]
