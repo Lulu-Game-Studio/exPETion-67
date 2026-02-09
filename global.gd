@@ -27,6 +27,7 @@ func completed_level(level_num: int, poopCuantity: int):
 		checkSecretLevel()
 
 func checkSecretLevel():
+	totalPoops = 0
 	for i in range(1, 7):
 		totalPoops += levels[i].items
 		
