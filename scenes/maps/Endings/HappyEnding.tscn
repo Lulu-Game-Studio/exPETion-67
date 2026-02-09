@@ -1,11 +1,22 @@
 [gd_scene format=3 uid="uid://clg17q5pxkoxe"]
 
-[ext_resource type="Texture2D" uid="uid://bve8j0ssjejcv" path="res://scenes/maps/Endings/HappyEnding.jpeg" id="1_sgnps"]
+[ext_resource type="Texture2D" uid="uid://bve8j0ssjejcv" path="res://scenes/maps/Endings/HappyEnding.jpeg" id="1_pb2nm"]
+[ext_resource type="Script" uid="uid://cr50sb31nygsd" path="res://scripts/happy_ending.gd" id="1_uvw5u"]
+[ext_resource type="PackedScene" uid="uid://b11kjpaxd5qnn" path="res://scenes/UI/MapButton.tscn" id="2_uvw5u"]
 
 [node name="Node2D" type="Node2D" unique_id=1812072323]
+script = ExtResource("1_uvw5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031526727]
-texture = ExtResource("1_sgnps")
+texture = ExtResource("1_pb2nm")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=771134495]
 zoom = Vector2(1.4, 0.65)
+
+[node name="Control" parent="." unique_id=1904105634 instance=ExtResource("2_uvw5u")]
+offset_left = -375.0
+offset_top = 351.0
+offset_right = -343.0
+offset_bottom = 383.0
+
+[connection signal="pressed" from="Control" to="." method="_on_control_pressed"]
