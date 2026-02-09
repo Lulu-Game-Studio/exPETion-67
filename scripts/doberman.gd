@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 20.0 # Constant base speed
+var speed = 35.0 # Constant base speed
 
 var target_player: Node2D = null
 var busy: bool = false

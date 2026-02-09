@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kp7nmocdxym7"
+path="res://.godot/imported/Level 4 Soundtrack.mp3-b79de6668b3ac8a39dd14e87b3b1cd87.mp3str"
+
+[deps]
+
+source_file="res://sounds/Level 4 Soundtrack.mp3"
+dest_files=["res://.godot/imported/Level 4 Soundtrack.mp3-b79de6668b3ac8a39dd14e87b3b1cd87.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

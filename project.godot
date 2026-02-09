@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="exPETion-67"
-run/main_scene="uid://bcmuv7kqub3xm"
+run/main_scene="uid://ce1avx78pvo8d"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -38,6 +38,7 @@ folder_colors={
 [global_group]
 
 player=""
+Enemy=""
 
 [input]
 
