@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cpxqdnax83qvw"
+path="res://.godot/imported/MapButton.png-826e1a255fdc9333181bb8bb509ea665.res"
+
+[deps]
+
+source_file="res://images/Design/Sprites/MapButton.png"
+dest_files=["res://.godot/imported/MapButton.png-826e1a255fdc9333181bb8bb509ea665.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

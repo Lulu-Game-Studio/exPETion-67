@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b11kjpaxd5qnn"]
+
+[ext_resource type="Texture2D" uid="uid://x22w1w6lrnaj" path="res://images/Design/Sprites/ui-sprites.png" id="1_eooku"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgdw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eooku"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ie20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgsm4"]
+atlas = ExtResource("1_eooku")
+region = Rect2(0, 64, 32, 32)
+
+[node name="Control" type="Button" unique_id=1904105634]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1120.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.9298105, 3.9456282)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rgdw8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eooku")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6ie20")
+icon = SubResource("AtlasTexture_mgsm4")

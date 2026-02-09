@@ -16,15 +16,22 @@ var levels = {
 func completed_level(level_num: int, poopCuantity: int):
 
 	if levels.has(level_num):
-
+	
 		if poopCuantity > levels[level_num].items:
 			levels[level_num].items = poopCuantity
 
 		if level_num < 6:
 			levels[level_num + 1].unlocked = true
-			
-			
+			get_tree().change_scene_to_file("res://scenes/maps/Map.tscn")
+		if level_num == 6:
+			if totalPoops==18:
+				get_tree().change_scene_to_file("res://scenes/maps/Endings/HappyEnding.tscn")
+			elif totalPoops<18:
+				get_tree().change_scene_to_file("res://scenes/maps/Endings/BadEnding.tscn")
+		if level_num == 7:
+			get_tree().change_scene_to_file("res://scenes/maps/Endings/SecretEnding.tscn")
 		checkSecretLevel()
+		
 
 func checkSecretLevel():
 	totalPoops = 0
