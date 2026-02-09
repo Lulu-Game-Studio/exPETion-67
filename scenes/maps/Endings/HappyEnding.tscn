@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bve8j0ssjejcv" path="res://scenes/maps/Endings/HappyEnding.jpeg" id="1_pb2nm"]
 [ext_resource type="Script" uid="uid://cr50sb31nygsd" path="res://scripts/happy_ending.gd" id="1_uvw5u"]
 [ext_resource type="PackedScene" uid="uid://b11kjpaxd5qnn" path="res://scenes/UI/MapButton.tscn" id="2_uvw5u"]
+[ext_resource type="AudioStream" uid="uid://xwp2qpaap2iv" path="res://sounds/outrothegrefg.mp3" id="4_e38bv"]
 
 [node name="Node2D" type="Node2D" unique_id=1812072323]
 script = ExtResource("1_uvw5u")
@@ -18,5 +19,10 @@ offset_left = -375.0
 offset_top = 351.0
 offset_right = -343.0
 offset_bottom = 383.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=269335651]
+stream = ExtResource("4_e38bv")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Control" to="." method="_on_control_pressed"]
