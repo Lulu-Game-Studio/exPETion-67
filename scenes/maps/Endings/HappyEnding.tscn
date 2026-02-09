@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://clg17q5pxkoxe"]
+
+[ext_resource type="Texture2D" uid="uid://bve8j0ssjejcv" path="res://scenes/maps/Endings/HappyEnding.jpeg" id="1_sgnps"]
+
+[node name="Node2D" type="Node2D" unique_id=1812072323]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031526727]
+texture = ExtResource("1_sgnps")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=771134495]
+zoom = Vector2(1.4, 0.65)

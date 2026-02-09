@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bgwfphev8mgq3"]
+
+[ext_resource type="Texture2D" uid="uid://cby70of344lmj" path="res://scenes/maps/Endings/BadEnding.jpeg" id="1_o166l"]
+
+[node name="Node2D" type="Node2D" unique_id=1809439429]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1869720011]
+texture = ExtResource("1_o166l")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1444705237]
+zoom = Vector2(1.4, 0.65)
