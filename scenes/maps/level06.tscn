@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="11_hnbu2"]
 [ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="13_wrnnv"]
 [ext_resource type="PackedScene" uid="uid://c56o6yh6jwphl" path="res://scenes/Saw.tscn" id="14_wrnnv"]
+[ext_resource type="AudioStream" uid="uid://cbim5ube7uhyg" path="res://sounds/Level 6 Soundtrack.mp3" id="15_5wdf1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_cpsmf"]
 tile_data = PackedInt32Array(0, 262144, 0, 1, 262144, 0, 2, 262144, 0, 3, 262144, 0, 4, 262144, 0, 5, 262144, 0, 6, 262144, 0, 7, 262144, 0, 8, 262144, 0, 9, 262144, 0, 10, 262144, 0)
@@ -222,5 +223,10 @@ position = Vector2(1673, 815)
 
 [node name="Saw7" parent="." unique_id=579536811 instance=ExtResource("14_wrnnv")]
 position = Vector2(1537, 815)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=439008014]
+stream = ExtResource("15_5wdf1")
+autoplay = true
+parameters/looping = true
 
 [editable path="dog"]

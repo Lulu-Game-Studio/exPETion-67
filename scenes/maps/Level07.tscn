@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="5_xl7ad"]
 [ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="6_8i56w"]
 [ext_resource type="Texture2D" uid="uid://b1mfmv5o8wfb2" path="res://images/Design/Sprites/thung thung thung sahur.jpg" id="7_8i56w"]
+[ext_resource type="AudioStream" uid="uid://bpwy7ffvxqb17" path="res://sounds/Level 7 Soundtrack.mp3" id="8_w6ve2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0idui"]
 texture = ExtResource("1_v816p")
@@ -312,3 +313,8 @@ z_index = -1
 position = Vector2(2018.9999, 816.9999)
 scale = Vector2(0.3023437, 0.27106476)
 texture = ExtResource("7_8i56w")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1658809762]
+stream = ExtResource("8_w6ve2")
+autoplay = true
+parameters/looping = true
