@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c2x2onnbg7sqi" path="res://images/Design/Sprites/Dog_Jail.png" id="9_n6wwg"]
 [ext_resource type="Texture2D" uid="uid://bk6lpwvt1dbnm" path="res://images/Design/Sprites/SCRATCH.png" id="10_p8fvj"]
 [ext_resource type="PackedScene" uid="uid://bko7qqfqls3so" path="res://scenes/key.tscn" id="11_3rbd3"]
-[ext_resource type="PackedScene" path="res://scenes/poop.tscn" id="11_fvnar"]
+[ext_resource type="PackedScene" uid="uid://bhmt36rx8qc5c" path="res://scenes/poop.tscn" id="11_fvnar"]
 [ext_resource type="PackedScene" uid="uid://k7ashoi3hvik" path="res://scenes/doberman.tscn" id="11_iutqx"]
-[ext_resource type="PackedScene" uid="uid://mywsbvwjc1ic" path="res://scenes/Dog_House.tscn" id="12_iutqx"]
+[ext_resource type="PackedScene" uid="uid://14w7ul0q6vmp" path="res://scenes/Dog_House.tscn" id="12_iutqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0idui"]
 texture = ExtResource("1_4e331")
@@ -147,7 +147,7 @@ texture = ExtResource("10_p8fvj")
 position = Vector2(18, 422)
 collision_mask = 1
 
-[node name="Camera2D" parent="dog" index="2" unique_id=575198120]
+[node name="Camera2D" parent="dog" index="0" unique_id=575198120]
 limit_left = -78
 limit_top = -149
 limit_right = 4143
