@@ -24,6 +24,7 @@ func completed_level(level_num: int, poopCuantity: int):
 			levels[level_num + 1].unlocked = true
 			get_tree().change_scene_to_file("res://scenes/maps/Map.tscn")
 		if level_num == 6:
+			checkSecretLevel()
 			if totalPoops==18:
 				get_tree().change_scene_to_file("res://scenes/maps/Endings/HappyEnding.tscn")
 			elif totalPoops<18:
